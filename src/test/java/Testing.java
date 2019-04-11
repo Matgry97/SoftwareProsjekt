@@ -34,6 +34,16 @@ public class Testing {
 
     }
 
+    @Test
+    public void test_film_removeFilm() {
+        ArrayList<Film> filmListe = new ArrayList<Film>();
+        ålesundKino.leggTilFilm(harryPotter);
+        int lagtTilLength = ålesundKino.getFilmListe().size();
+        ålesundKino.fjernFilm(harryPotter);
+        int fjernFilmLenght = ålesundKino.getFilmListe().size();
+
+        assertFalse(lagtTilLength < fjernFilmLenght, "Film er fjernet");
+    }
 
 
 

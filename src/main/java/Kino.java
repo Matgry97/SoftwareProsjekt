@@ -13,6 +13,8 @@ public class Kino extends Arrangement{
         filmListe.add(film);
     }
 
+    public void fjernFilm(Film film) { filmListe.remove(film);}
+
     public ArrayList<Film> getFilmListe() {
         return filmListe;
     }
