@@ -85,4 +85,5 @@ public class Billett {
         public void setDato(LocalDate dato) {
             this.dato = dato;
         }
+
     }

@@ -26,9 +26,9 @@ public class Testing {
     @Test
     public void test_film_leggTil() {
         ArrayList<Film> filmListe = new ArrayList<Film>();
-        int preLength = ålesundKino.filmListe.size();
+        int preLength = ålesundKino.getFilmListe().size();
         ålesundKino.leggTilFilm(harryPotter);
-        int postLength = ålesundKino.filmListe.size();
+        int postLength = ålesundKino.getFilmListe().size();
 
         assertTrue(preLength < postLength, "Film lagt til");
 

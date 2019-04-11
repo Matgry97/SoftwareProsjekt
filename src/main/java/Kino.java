@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Kino extends Arrangement{
     int antallSaler;
-    ArrayList<Film> filmListe = new ArrayList<Film>();
+    private ArrayList<Film> filmListe = new ArrayList<Film>();
 
     public Kino(int antallSaler) {
         this.antallSaler = antallSaler;
@@ -13,6 +13,13 @@ public class Kino extends Arrangement{
         filmListe.add(film);
     }
 
+    public ArrayList<Film> getFilmListe() {
+        return filmListe;
+    }
+
+    public void setFilmListe(ArrayList<Film> filmListe) {
+        this.filmListe = filmListe;
+    }
 
     public int getAntallSaler() {
         return antallSaler;
