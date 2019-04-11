@@ -24,8 +24,6 @@ public class Film {
     //Oppdater og endre film
 
 
-    //Slette film
-
     public void slettFilm(Film film) {
         filmListe.remove(film);
     }
