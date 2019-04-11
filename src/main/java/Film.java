@@ -8,6 +8,10 @@ public class Film {
     private int spilletid;
     private LocalDate utgivDato;
 
+    public void EirikDrikker() {
+        
+    }
+
 
     //public Person regissør;
     // public Person skuespiller;
