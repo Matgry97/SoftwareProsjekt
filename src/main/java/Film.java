@@ -21,6 +21,10 @@ public class Film {
         this.utgivDato = utgivDato;
     }
 
+    protected int karin() {
+        return 1;
+    }
+
     //Oppdater og endre film
 
 
