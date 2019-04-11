@@ -1,9 +1,12 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        private static List<Film> filmListe = new ArrayList<Film>();
 
         Kino AalesundVikKino = new Kino(3);
 
@@ -22,6 +25,17 @@ public class Main {
         kunde1.kjopBilett(billett);
 
         System.out.println(kunde1.getSaldo());
+
+        Person person = new Person("Hi", "of", 18, 150);
+        System.out.println(person.toString());
+
+        Admin a = new Admin(person);
+        System.out.println(a.toString());
+
+        a.remove(filmListe, actionJackson);
+        a.add(filmListe, deltaForce);
+        a.add(filmListe, escapeFromNewYork);
+        System.out.println(filmListe.toString());
 
 
     }
