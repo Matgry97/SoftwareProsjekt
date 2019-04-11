@@ -1,9 +1,11 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 
 import java.util.ArrayList;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class Testing {
 
@@ -13,7 +15,7 @@ public class Testing {
     @Test
     public void testAddFilm(Film film) {
         filmer.add(film);
-        assertEquals(filmer.get(0));
+        Assertions.assertEquals(filmer.get(0));
     }
 
 
