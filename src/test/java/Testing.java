@@ -31,7 +31,8 @@ public class Testing {
         int postLength = ålesundKino.filmListe.size();
 
         assertTrue(preLength < postLength, "Film lagt til");
-
     }
-    
+
+
+
 }

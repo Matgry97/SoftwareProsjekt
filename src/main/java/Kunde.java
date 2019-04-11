@@ -12,7 +12,7 @@ public class Kunde extends Person {
 
    public void kjopBilett(Billett billett) {
        //Trenger Test
-       if (saldo != 0 || saldo - billett.getBillettpris() >= 0) {
+       if (saldo - billett.getBillettpris() >= 0) {
            billettListe.add(billett);
            setSaldo(saldo - billett.getBillettpris());
        }
