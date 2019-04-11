@@ -1,0 +1,30 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Kino AalesundVikKino = new Kino(3);
+
+        Kunde kunde1 = new Kunde(300);
+
+        Film actionJackson = new Film("Action Jackson slår til igjen","Heftig action",93, LocalDate.of(1988,7,7));
+        Film deltaForce = new Film("The Delta Force"," Mega heftig action",125, LocalDate.of(1986,10,2));
+        Film escapeFromNewYork = new Film("Escape from New York"," Ultra heftig action",99, LocalDate.of(1981,12,26));
+
+        Billett billett = new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 150, "15:30", LocalDate.of(2014,3,3));
+
+        System.out.println(deltaForce);
+
+        AalesundVikKino.leggTilFilm(actionJackson);
+
+        kunde1.kjopBilett(billett);
+
+        System.out.println(kunde1.getSaldo());
+
+
+    }
+
+}
+
