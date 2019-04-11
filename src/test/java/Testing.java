@@ -33,8 +33,5 @@ public class Testing {
         assertTrue(preLength < postLength, "Film lagt til");
 
     }
-
-
-
-
+    
 }
