@@ -1,12 +1,34 @@
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // public List<Film> filmListe = new ArrayList<Film>();
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Hei, hva heter du?");
+
+        String scanNavn = scan.nextLine();
+
+        System.out.println("Ditt navn er : " + scanNavn + " \n " +
+                "Setemmer dette? Skriv Ja eller Nei");
+
+        String scanJaNei = scan.nextLine();
+
+        String sjekkInput = new String(scanJaNei);
+
+        if(sjekkInput != "Ja") {
+            System.out.println("Da går vi videre");
+        } else {
+            System.out.println("Feil navn? Det var du som skreiv");
+        }
+
+
+
+        ArrayList<Film> filmListe = new ArrayList<Film>();
 
         Kino AalesundVikKino = new Kino(3);
 
@@ -18,27 +40,19 @@ public class Main {
 
         Billett billett = new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 150, "15:30", LocalDate.of(2014,3,3));
 
-        System.out.println(deltaForce);
-
-        AalesundVikKino.leggTilFilm(actionJackson);
-
-        kunde1.kjopBilett(billett);
-
-        System.out.println(kunde1.getSaldo());
-
+        /*
         Person person = new Person("Hi", "of", 18, 150);
         System.out.println(person.toString());
 
         Admin a = new Admin(person);
         System.out.println(a.toString());
-        /*
+
         a.remove(filmListe, actionJackson);
         a.add(filmListe, deltaForce);
         a.add(filmListe, escapeFromNewYork);
         System.out.println(filmListe.toString());
         */
 
-        System.out.println(actionJackson);
 
 
     }
