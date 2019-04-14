@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
+        /*
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Hei, hva heter du?");
@@ -25,8 +25,7 @@ public class Main {
         } else {
             System.out.println("Feil navn? Det var du som skreiv");
         }
-
-
+        */
 
         ArrayList<Film> filmListe = new ArrayList<Film>();
 
@@ -40,18 +39,20 @@ public class Main {
 
         Billett billett = new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 150, "15:30", LocalDate.of(2014,3,3));
 
-        /*
+
         Person person = new Person("Hi", "of", 18, 150);
         System.out.println(person.toString());
 
         Admin a = new Admin(person);
         System.out.println(a.toString());
-
+        /*
         a.remove(filmListe, actionJackson);
         a.add(filmListe, deltaForce);
         a.add(filmListe, escapeFromNewYork);
         System.out.println(filmListe.toString());
         */
+
+        System.out.println(billett);
 
 
 

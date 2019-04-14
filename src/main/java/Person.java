@@ -36,6 +36,7 @@ public class Person {
         this.alder = alder;
     }
 
+    @Override
     public String toString() {
         return this.fornavn + " " + this.etternavn + " " + this.alder;
     }

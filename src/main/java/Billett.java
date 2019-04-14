@@ -2,16 +2,26 @@ import java.time.LocalDate;
 
 public class Billett {
 
+        // Dette er for film
         private String filmnavn;
         private String kinonavn;
         private int salnr;
         private int radnr;
         private int setenr;
         private int billettpris;
+
+        //Dette er for arrangemang
+        private String arrangemang;
+
+        //Felles variabler
+        private int billettID;
         private String klokkeslett;
         private LocalDate dato;
 
-        public Billett(String filmnavn, String kinonavn, int salnr, int radnr, int setenr, int billettpris, String klokkeslett, LocalDate dato) {
+
+
+
+        public Billett(String filmnavn, String kinonavn, int salnr, int radnr, int setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
             this.filmnavn = filmnavn;
             this.kinonavn = kinonavn;
             this.salnr = salnr;
@@ -20,7 +30,12 @@ public class Billett {
             this.billettpris = billettpris;
             this.klokkeslett = klokkeslett;
             this.dato = dato;
+            this.billettID = billettID;
         }
+
+        public int getBillettID() { return billettID;}
+
+        public void setBilettID(int BillettID) {this.billettID = billettID; }
 
         public String getFilmnavn() {
             return filmnavn;
@@ -84,6 +99,16 @@ public class Billett {
 
         public void setDato(LocalDate dato) {
             this.dato = dato;
+        }
+
+        @Override
+        public String toString() {
+           return  "----|| Din bilett er ||----" + "\n" +
+                   "Film :  " + this.filmnavn + " \n" +
+                    "Kino : " + this.kinonavn + "\n" +
+                    "Sal : " + this.salnr + ", Rad : " + this.radnr + ", Sete : " + this.setenr + "\n" +
+                    "Klokken : " + this.klokkeslett + "\n" +
+                    "Pris : " + this.billettpris;
         }
 
     }
