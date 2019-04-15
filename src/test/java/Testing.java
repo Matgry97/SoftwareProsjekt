@@ -41,4 +41,14 @@ public class Testing {
         int postLength = Per.billettListe.size();
         assertTrue(preLength < postLength, "Kjøpt billett");
     }
+
+    @Test
+    public void AvbestillBillett() {
+        // Må kjøpe en billett for å kunne avbestille
+        Per.kjopBilett(HarryPotter);
+        int preLength = Per.billettListe.size();
+        Per.avbestilleBilett(HarryPotter);
+        int postLength = Per.billettListe.size();
+        assertTrue(preLength > postLength, "avbestilt billett");
+    }
 }
