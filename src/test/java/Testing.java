@@ -15,6 +15,8 @@ public class Testing {
 
     Kino ålesundKino = new Kino(4);
     Film harryPotter = new Film("Harry Potter", "magisk film", 100, LocalDate.of(2002, 12, 05));
+    Kunde Per = new Kunde(1000);
+    Billett HarryPotter = new Billett("Harry Potter", "Ålesund Kino", 3, 5, 5, 150, "17:00", LocalDate.of(2002, 12, 05));
 
     @Test
     public void test_Film_Eksisterer() {
@@ -25,7 +27,6 @@ public class Testing {
 
     @Test
     public void test_film_leggTil() {
-        ArrayList<Film> filmListe = new ArrayList<Film>();
         int preLength = ålesundKino.filmListe.size();
         ålesundKino.leggTilFilm(harryPotter);
         int postLength = ålesundKino.filmListe.size();
@@ -33,6 +34,11 @@ public class Testing {
         assertTrue(preLength < postLength, "Film lagt til");
     }
 
-
-
+    @Test
+    public void testKjøpBillett() {
+        int preLength = Per.billettListe.size();
+        Per.kjopBilett(HarryPotter);
+        int postLength = Per.billettListe.size();
+        assertTrue(preLength < postLength, "Kjøpt billett");
+    }
 }
