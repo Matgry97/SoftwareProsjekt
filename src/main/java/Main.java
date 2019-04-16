@@ -10,8 +10,6 @@ public class Main {
         //public List<Film> filmListe = new ArrayList<Film>();
         List<Billett> billettListe = new ArrayList<Billett>();
 
-
-        Person p = new Person("Kaido", "kaizoku", 18, 200 );
         Scanner scanner = new Scanner(System.in);
 
         String userName = scanner.next();
@@ -36,7 +34,7 @@ public class Main {
             a.kjopBilett(billettListe.get(menuChoice));
         }
         else if (userChoice == 2) {
-            System.out.println("Fikser senere");
+            System.out.println(".");
         }
 
         /*
