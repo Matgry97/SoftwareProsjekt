@@ -32,7 +32,6 @@ public class Testing {
         int postLength = ålesundKino.getFilmListe().size();
 
         assertTrue(preLength < postLength, "Film lagt til");
-
     }
 
     @Test
@@ -73,6 +72,5 @@ public class Testing {
 
         assertFalse(KundeSaldoBeforeBuy > KundeSaldoAfterBuy, "Ikke nokk Saldo");
     }
-
 
 }
