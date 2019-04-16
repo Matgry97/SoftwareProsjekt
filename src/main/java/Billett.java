@@ -85,4 +85,9 @@ public class Billett {
         public void setDato(LocalDate dato) {
             this.dato = dato;
         }
+
+        @Override
+        public String toString() {
+            return "billetpris: " + getBillettpris();
+        }
     }

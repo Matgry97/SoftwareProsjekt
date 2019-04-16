@@ -10,7 +10,11 @@ public class Main {
 
         Kino AalesundVikKino = new Kino(3);
 
+        Person person3 = new Person("Selger", "Selgesen", 18, 150);
+
         Kunde kunde1 = new Kunde(300);
+
+        Selger selger1 = new Selger(person3);
 
         Film actionJackson = new Film("Action Jackson slår til igjen","Heftig action",93, LocalDate.of(1988,7,7));
         Film deltaForce = new Film("The Delta Force"," Mega heftig action",125, LocalDate.of(1986,10,2));
@@ -29,6 +33,11 @@ public class Main {
         Person person = new Person("Hi", "of", 18, 150);
         System.out.println(person.toString());
 
+        selger1.opprettArrangement("siesta","soverom","sov", 100, "20.april", true);
+        System.out.println(billett);
+        System.out.println("billettpris endret til 100");
+        selger1.settPris(billett,100);
+        System.out.println(billett);
         Admin a = new Admin(person);
         System.out.println(a.toString());
         /*
