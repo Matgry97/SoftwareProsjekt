@@ -15,7 +15,8 @@ public class Testing {
 
     Kino ålesundKino = new Kino(4);
     Film harryPotter = new Film("Harry Potter", "magisk film", 100, LocalDate.of(2002, 12, 05));
-
+    Billett FilmBillett = new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
+    Kunde Kunde1 = new Kunde(149);
     @Test
     public void test_Film_Eksisterer() {
         System.out.println(harryPotter);
@@ -46,7 +47,7 @@ public class Testing {
     }
 
     @Test
-    public void test_kunde_saldoEndring_kjopBillett() {
+    public void test_kunde_ikkeNokkSaldo_kjopBillett() {
         Billett FilmBillett = new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
         Kunde Kunde1 = new Kunde(149);
 
@@ -56,25 +57,22 @@ public class Testing {
 
         int KundeSaldoAfterBuy = Kunde1.getSaldo();
 
-        assertFalse(KundeSaldoBeforeBuy > KundeSaldoAfterBuy, "Film er blitt kjøpt.");
+        assertFalse(KundeSaldoBeforeBuy > KundeSaldoAfterBuy, "Ikke nokk Saldo");
 
 
     }
 
     @Test
-    public void test_billettID_increase_kjopBilett() {
-        Billett FilmBillett = new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
-        Kunde Kunde1 = new Kunde(290);
-
-        int billettIDBeforeBuy = FilmBillett.getBillettID();
+    public void test_KanKjoopeBillett_kjopBilett() {
+        Kunde1.setSaldo(150);
+        int KundeSaldoBeforeBuy = Kunde1.getSaldo();
 
         Kunde1.kjopBilett(FilmBillett);
 
-        int billettIDAfterBuy = FilmBillett.getBillettID();
+        int KundeSaldoAfterBuy = Kunde1.getSaldo();
 
-        assertFalse(billettIDBeforeBuy < billettIDAfterBuy, "IDen på billetten Øker.");
+        assertFalse(KundeSaldoBeforeBuy > KundeSaldoAfterBuy, "Ikke nokk Saldo");
     }
-
 
 
 }
