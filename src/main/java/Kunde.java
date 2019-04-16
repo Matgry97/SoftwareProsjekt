@@ -24,8 +24,8 @@ public class Kunde extends Person {
        }
    }
 
-       System.out.println("Du har kjøpt billett til filmen " + billett.getFilmnavn());
-   }
+     // System.out.println("Du har kjøpt billett til filmen " + billett.getFilmnavn());
+
 
    public void avbestilleBilett(Billett billett) {
        //Trenger Test
