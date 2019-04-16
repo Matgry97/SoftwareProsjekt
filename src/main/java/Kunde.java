@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Kunde extends Person {
     private int saldo;
+    private Arrangement Arrangement;
+
     ArrayList<Billett> billettListe = new ArrayList<Billett>();
 
    public Kunde(int saldo) {
@@ -11,14 +13,17 @@ public class Kunde extends Person {
    }
 
    public void kjopBilett(Billett billett) {
-       //Trenger Test
-       if (saldo - billett.getBillettpris() >= 0) {
-           billettListe.add(billett);
-           setSaldo(saldo - billett.getBillettpris());
-       }
+       int pris = billett.getBillettpris();
 
-       System.out.println("Du har kjøpt billett til filmen " + billett.getFilmnavn());
+       if (this.saldo - pris >= 0) {
+           billettListe.add(billett);
+           this.saldo = saldo - pris;
+
+       }else {
+           System.out.println("Ikke dekning på konto, fattig lus");
+       }
    }
+
 
    public void avbestilleBilett(Billett billett) {
        //Trenger Test

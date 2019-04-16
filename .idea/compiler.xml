@@ -9,6 +9,7 @@
         <module name="SEprosjekt" />
         <module name="SoftwareEngeneeringFAKk" />
         <module name="SoftwareProsjekt" />
+        <module name="SoftwareProsjekt2" />
       </profile>
     </annotationProcessing>
   </component>

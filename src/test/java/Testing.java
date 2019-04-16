@@ -45,6 +45,36 @@ public class Testing {
         assertFalse(lagtTilLength < fjernFilmLenght, "Film er fjernet");
     }
 
+    @Test
+    public void test_kunde_saldoEndring_kjopBillett() {
+        Billett FilmBillett = new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
+        Kunde Kunde1 = new Kunde(149);
+
+        int KundeSaldoBeforeBuy = Kunde1.getSaldo();
+
+        Kunde1.kjopBilett(FilmBillett);
+
+        int KundeSaldoAfterBuy = Kunde1.getSaldo();
+
+        assertFalse(KundeSaldoBeforeBuy > KundeSaldoAfterBuy, "Film er blitt kjøpt.");
+
+
+    }
+
+    @Test
+    public void test_billettID_increase_kjopBilett() {
+        Billett FilmBillett = new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
+        Kunde Kunde1 = new Kunde(290);
+
+        int billettIDBeforeBuy = FilmBillett.getBillettID();
+
+        Kunde1.kjopBilett(FilmBillett);
+
+        int billettIDAfterBuy = FilmBillett.getBillettID();
+
+        assertFalse(billettIDBeforeBuy < billettIDAfterBuy, "IDen på billetten Øker.");
+    }
+
 
 
 }
