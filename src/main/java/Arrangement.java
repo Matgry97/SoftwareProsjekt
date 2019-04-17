@@ -63,4 +63,11 @@ public class Arrangement {
     public void setTilgjengelighet(boolean tilgjengelighet) {
         this.tilgjengelighet = tilgjengelighet;
     }
+
+    @Override
+    public String toString(){
+        return "Arrangementnavn: " + getNavn() + "\n"+ "sted: " + getSted() + "\n"
+                + "beskrivelse: " + getBeskrivelse() + "\n" +  "antall plasser: " + getMaxPlass() + "\n"
+                + "dato: " + getDato() + "\n";
+    }
 }
