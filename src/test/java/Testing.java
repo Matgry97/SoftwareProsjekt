@@ -73,4 +73,7 @@ public class Testing {
         assertFalse(KundeSaldoBeforeBuy > KundeSaldoAfterBuy, "Ikke nokk Saldo");
     }
 
+
+    //Flere TEster her pls før vi brenner ned
+
 }
