@@ -22,7 +22,11 @@ public class Testing {
     public void test_Film_Eksisterer() {
         System.out.println(harryPotter);
         assertEquals(harryPotter, harryPotter);
+    }
 
+    @Test
+    public void testOmBillettFinnes() {
+        assertNotNull(HarryPotter, "billetten finnes ikke");
     }
 
     @Test
@@ -31,7 +35,7 @@ public class Testing {
         ålesundKino.leggTilFilm(harryPotter);
         int postLength = ålesundKino.filmListe.size();
 
-        assertTrue(preLength < postLength, "Film lagt til");
+        assertTrue(preLength < postLength, "Fungerte ikke å legge til film");
     }
 
     @Test
@@ -39,7 +43,7 @@ public class Testing {
         int preLength = Per.billettListe.size();
         Per.kjopBilett(HarryPotter);
         int postLength = Per.billettListe.size();
-        assertTrue(preLength < postLength, "Kjøpt billett");
+        assertTrue(preLength < postLength, "Kjøping av billett fungerte ikke ");
     }
 
     @Test
@@ -49,6 +53,8 @@ public class Testing {
         int preLength = Per.billettListe.size();
         Per.avbestilleBilett(HarryPotter);
         int postLength = Per.billettListe.size();
-        assertTrue(preLength > postLength, "avbestilt billett");
+        assertTrue(preLength > postLength, "avbestilt billett fungerer ikke");
     }
+
+
 }
