@@ -35,6 +35,9 @@ public class Kunde extends Person {
             );
 
         }
+        else {
+            System.out.println("Feil ved kjøp av billett!" + "\n" +  "Mangler " + (billett.getBillettpris()-saldo) + "kr");
+        }
     }
 
     public int idTeller (int counter) {
