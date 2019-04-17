@@ -27,3 +27,4 @@ public class Kino extends Arrangement{
     }
 }
 
+// d
