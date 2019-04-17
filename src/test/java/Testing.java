@@ -30,6 +30,16 @@ public class Testing {
     }
 
     @Test
+    public void testOmKundeFinnes() {
+        assertNotNull(Per, "Kunden finnes ikke");
+    }
+
+    @Test
+    public void testOmKinoFinnes() {
+        assertNotNull(ålesundKino, "kinoen finnes ikke");
+    }
+
+    @Test
     public void test_film_leggTil() {
         int preLength = ålesundKino.filmListe.size();
         ålesundKino.leggTilFilm(harryPotter);
