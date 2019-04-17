@@ -13,6 +13,10 @@ public class Kino extends Arrangement{
         filmListe.add(film);
     }
 
+    public void SlettFilm(Film film) {
+        filmListe.remove(film);
+    }
+
 
     public int getAntallSaler() {
         return antallSaler;

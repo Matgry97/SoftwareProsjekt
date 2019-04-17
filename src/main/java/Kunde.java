@@ -29,7 +29,7 @@ public class Kunde extends Person {
    }
 
 
-    public void setSaldo(int Saldo) {this.saldo = saldo;}
+    public void setSaldo(int saldo) {this.saldo = saldo;}
 
     public int getSaldo() {return this.saldo;}
 

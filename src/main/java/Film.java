@@ -7,7 +7,6 @@ public class Film {
     private String beskrivelse;
     private int spilletid;
     private LocalDate utgivDato;
-    ArrayList<Film> filmListe = new ArrayList<Film>();
 
 
     //public Person regissør;
@@ -21,16 +20,8 @@ public class Film {
         this.utgivDato = utgivDato;
     }
 
-    protected int karin() {
-        return 1;
-    }
-
     //Oppdater og endre film
 
-
-    public void slettFilm(Film film) {
-        filmListe.remove(film);
-    }
 
 
     public String getTittel() {

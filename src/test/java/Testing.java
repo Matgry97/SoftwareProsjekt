@@ -50,6 +50,15 @@ public class Testing {
         assertTrue(preLength < postLength, "Fungerte ikke å legge til film");
     }
 
+    @Test
+    public void test_Slett_Film() {
+        ålesundKino.leggTilFilm(harryPotter);
+        int preLength = ålesundKino.filmListe.size();
+        ålesundKino.SlettFilm(harryPotter);
+        int postLength = ålesundKino.filmListe.size();
+        assertTrue(preLength > postLength,"fungerte ikke å slette film");
+    }
+
 
     @Test
     public void testKjøpBillett() {
