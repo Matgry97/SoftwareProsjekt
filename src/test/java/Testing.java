@@ -69,14 +69,6 @@ public class Testing {
     }
 
     @Test
-    public void testSaldoEtterKjøptBillett() {
-        int preSaldo = Per.getSaldo();
-        Per.kjopBilett(HarryPotter);
-        int postSaldo = Per.getSaldo();
-        assertTrue(preSaldo > postSaldo, "Saldoen ble ikke forandret");
-    }
-
-    @Test
     public void AvbestillBillett() {
         // Må kjøpe en billett for å kunne avbestille
         Per.kjopBilett(HarryPotter);
