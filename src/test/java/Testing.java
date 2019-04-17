@@ -76,4 +76,9 @@ public class Testing {
 
     //Flere TEster her pls før vi brenner ned
 
+    @Test
+    public void trenger_Test_Test_test() {
+        System.out.println("Hei dere andre");
+    }
+
 }
