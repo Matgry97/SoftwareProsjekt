@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 
@@ -46,9 +47,9 @@ public class Testing {
         int preLength = ålesundKino.filmListe.size();
         ålesundKino.leggTilFilm(harryPotter);
         int postLength = ålesundKino.filmListe.size();
-
         assertTrue(preLength < postLength, "Fungerte ikke å legge til film");
     }
+
 
     @Test
     public void testKjøpBillett() {
@@ -64,7 +65,6 @@ public class Testing {
         Per.kjopBilett(HarryPotter);
         int postSaldo = Per.getSaldo();
         assertTrue(preSaldo > postSaldo, "Saldoen ble ikke forandret");
-        
     }
 
     @Test
@@ -74,7 +74,16 @@ public class Testing {
         int preLength = Per.billettListe.size();
         Per.avbestilleBilett(HarryPotter);
         int postLength = Per.billettListe.size();
-        assertTrue(preLength > postLength, "avbestilt billett fungerer ikke");
+        assertTrue(preLength > postLength, "Avbestilt billett fungerer ikke");
+    }
+
+    @Test
+    public void testSaldoEtterAvbestilltBillett() {
+        int preSaldo = Per.getSaldo();
+        Per.kjopBilett(HarryPotter);
+        Per.avbestilleBilett(HarryPotter);
+        int postSaldo = Per.getSaldo();
+        assertTrue(preSaldo == postSaldo, "Saldoen ble ikke den samme som den opprinnelige");
     }
 
 
