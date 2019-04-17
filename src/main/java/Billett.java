@@ -109,7 +109,7 @@ public class Billett {
                     "Sal : " + this.salnr + ", Rad : " + this.radnr + ", Sete : " + this.setenr + "\n" +
                     "Klokken : " + this.klokkeslett + "\n" +
                     "Pris : " + this.billettpris + "\n" +
-                   "ID : " + this.billettID++;
+                   "ID : " + this.billettID;
         }
 
     }

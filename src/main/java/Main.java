@@ -1,37 +1,52 @@
 import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+
         /*
-        Scanner scan = new Scanner(System.in);
+        List<Billett> billettListe = new ArrayList<Billett>();
 
-        System.out.println("Hei, hva heter du?");
 
-        String scanNavn = scan.nextLine();
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Ditt navn er : " + scanNavn + " \n " +
-                "Setemmer dette? Skriv Ja eller Nei");
+        String userName = scanner.next();
+        Kunde a = new Kunde(scanner.nextLine(), 200);
 
-        String scanJaNei = scan.nextLine();
+        Billett billett1 = new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 90, "15:30", LocalDate.of(2014,3,3),1);
+        Billett billett2 = new Billett("emojifilmen", "Ålesund kino", 3, 3, 12, 300, "14:30", LocalDate.of(2015,3,3),1 );
+        billettListe.add(billett1);
+        billettListe.add(billett2);
 
-        String sjekkInput = new String(scanJaNei);
+        System.out.println("1) Kjøp billett" + "\n" + "2) Selger"
+        );
 
-        if(sjekkInput != "Ja") {
-            System.out.println("Da går vi videre");
-        } else {
-            System.out.println("Feil navn? Det var du som skreiv");
+        int userChoice = scanner.nextInt();
+
+        if (userChoice == 1) {
+            for (int i = 0; i < billettListe.size(); i++) {
+                System.out.println(i + ") " + billettListe.get(i).getFilmnavn() + " - " + billettListe.get(i).getBillettpris());
+
+            }
+            int menuChoice = scanner.nextInt();
+            a.kjopBilett(billettListe.get(menuChoice));
+        }
+        else if (userChoice == 2) {
+            System.out.println(".");
         }
         */
+
+
 
         ArrayList<Film> filmListe = new ArrayList<Film>();
 
         Kino AalesundVikKino = new Kino(3);
 
-        Kunde kunde1 = new Kunde(160);
+        Kunde kunde1 = new Kunde("mateusz", 500);
 
         Film actionJackson = new Film("Action Jackson slår til igjen","Heftig action",93, LocalDate.of(1988,7,7));
         Film deltaForce = new Film("The Delta Force"," Mega heftig action",125, LocalDate.of(1986,10,2));
@@ -39,14 +54,17 @@ public class Main {
 
         Billett billett = new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 150, "15:30", LocalDate.of(2014,3,3), 1);
 
-        Person person = new Person("Hi", "of", 18, 150);
-        System.out.println(person.toString());
-
         System.out.println(billett);
 
         kunde1.kjopBilett(billett);
 
-        System.out.println("--Saldo Kunde1-- " + kunde1.getSaldo());
+        kunde1.kjopBilett(billett);
+
+
+
+
+
+
 
 
 

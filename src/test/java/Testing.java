@@ -16,7 +16,7 @@ public class Testing {
     Kino ålesundKino = new Kino(4);
     Film harryPotter = new Film("Harry Potter", "magisk film", 100, LocalDate.of(2002, 12, 05));
     Billett FilmBillett = new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
-    Kunde Kunde1 = new Kunde(149);
+    Kunde Kunde1 = new Kunde("mateusz", 149);
     @Test
     public void test_Film_Eksisterer() {
         System.out.println(harryPotter);
@@ -48,7 +48,7 @@ public class Testing {
     @Test
     public void test_kunde_ikkeNokkSaldo_kjopBillett() {
         Billett FilmBillett = new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
-        Kunde Kunde1 = new Kunde(149);
+        Kunde Kunde1 = new Kunde("mateusz", 149);
 
         int KundeSaldoBeforeBuy = Kunde1.getSaldo();
 
