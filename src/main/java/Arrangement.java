@@ -18,9 +18,7 @@ public class Arrangement {
         this.tilgjengelighet = tilgjengelighet;
     }
 
-    public String getNavn() {
-        return navn;
-    }
+    public String getNavn() { return navn; }
 
     public void setNavn(String navn) {
         this.navn = navn;
