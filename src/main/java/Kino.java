@@ -2,24 +2,24 @@ import java.util.ArrayList;
 
 public class Kino extends Arrangement{
     int antallSaler;
-    private ArrayList<Film> filmListe = new ArrayList<Film>();
+    private ArrayList<Film.Billett> filmListe = new ArrayList<Film.Billett>();
 
     public Kino(int antallSaler) {
         this.antallSaler = antallSaler;
     }
 
 
-    public void leggTilFilm(Film film) {
+    public void leggTilFilm(Film.Billett film) {
         filmListe.add(film);
     }
 
-    public void fjernFilm(Film film) { filmListe.remove(film);}
+    public void fjernFilm(Film.Billett film) { filmListe.remove(film);}
 
-    public ArrayList<Film> getFilmListe() {
+    public ArrayList<Film.Billett> getFilmListe() {
         return filmListe;
     }
 
-    public void setFilmListe(ArrayList<Film> filmListe) {
+    public void setFilmListe(ArrayList<Film.Billett> filmListe) {
         this.filmListe = filmListe;
     }
 

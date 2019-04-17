@@ -10,6 +10,7 @@
         <module name="SoftwareEngeneeringFAKk" />
         <module name="SoftwareProsjekt" />
         <module name="SoftwareProsjekt2" />
+        <module name="SoftwareProsjekt4" />
       </profile>
     </annotationProcessing>
   </component>

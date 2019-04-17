@@ -7,14 +7,14 @@ public class Kunde extends Person {
     private Arrangement Arrangement;
     private int unikId;
 
-    ArrayList<Billett> billettListe = new ArrayList<Billett>();
+    ArrayList<Film.Billett> billettListe = new ArrayList<Film.Billett>();
 
     public Kunde(String fornavn, int saldo) {
         this.saldo = saldo;
 
     }
 
-    public void kjopBilett(Billett billett) {
+    public void kjopBilett(Film.Billett billett) {
         int pris = billett.getBillettpris();
 
         if (this.saldo - pris >= 0) {
@@ -23,7 +23,7 @@ public class Kunde extends Person {
             billettListe.add(billett);
             billett.setBilettID(this.unikId);
 
-            System.out.println("Du har kjøpt billett til filmen " + billett.getFilmnavn());
+            System.out.println("Du har kjøpt billett til filmen " + billett.getTittel());
 
 
             System.out.println(billett.toString());
@@ -42,7 +42,7 @@ public class Kunde extends Person {
         return counter;
     }
 
-    public void avbestilleBilett(Billett billett) {
+    public void avbestilleBilett(Film.Billett billett) {
         //Trenger Test
         billettListe.remove(billett);
         setSaldo(this.saldo + billett.getBillettpris());

@@ -14,8 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class Testing {
 
     Kino ålesundKino = new Kino(4);
-    Film harryPotter = new Film("Harry Potter", "magisk film", 100, LocalDate.of(2002, 12, 05));
-    Billett FilmBillett = new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
+    Film.Billett harryPotter = new Film("Harry Potter", "magisk film", 100, LocalDate.of(2002, 12, 05)).new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
     Kunde Kunde1 = new Kunde("mateusz", 149);
     @Test
     public void test_Film_Eksisterer() {
@@ -36,7 +35,7 @@ public class Testing {
 
     @Test
     public void test_film_removeFilm() {
-        ArrayList<Film> filmListe = new ArrayList<Film>();
+        ArrayList<Film.Billett> filmListe = new ArrayList<Film.Billett>();
         ålesundKino.leggTilFilm(harryPotter);
         int lagtTilLength = ålesundKino.getFilmListe().size();
         ålesundKino.fjernFilm(harryPotter);
@@ -47,7 +46,7 @@ public class Testing {
 
     @Test
     public void test_kunde_ikkeNokkSaldo_kjopBillett() {
-        Billett FilmBillett = new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
+        Film.Billett FilmBillett = new Film("Harry Potter", "magisk film", 100, LocalDate.of(2002, 12, 05)).new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
         Kunde Kunde1 = new Kunde("mateusz", 149);
 
         int KundeSaldoBeforeBuy = Kunde1.getSaldo();
@@ -66,7 +65,7 @@ public class Testing {
         Kunde1.setSaldo(150);
         int KundeSaldoBeforeBuy = Kunde1.getSaldo();
 
-        Kunde1.kjopBilett(FilmBillett);
+        Kunde1.kjopBilett(harryPotter);
 
         int KundeSaldoAfterBuy = Kunde1.getSaldo();
 
