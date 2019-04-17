@@ -89,5 +89,39 @@ public class Testing {
         int postSaldo = Per.getSaldo();
         assertTrue(preSaldo == postSaldo, "Saldoen ble ikke den samme som den opprinnelige");
     }
+    
+    @Test
+    public void AvbestillBillett() {
+        // Må kjøpe en billett for å kunne avbestille
+        Per.kjopBilett(HarryPotter);
+        int preLength = Per.billettListe.size();
+        Per.avbestilleBilett(HarryPotter);
+        int postLength = Per.billettListe.size();
+        assertTrue(preLength > postLength, "Avbestilt billett fungerer ikke");
+    }
+    
+    @Test
+    public void test_Slett_Film() {
+        ålesundKino.leggTilFilm(harryPotter);
+        int preLength = ålesundKino.getFilmListe().size();
+        ålesundKino.SlettFilm(harryPotter);
+        int postLength = ålesundKino.getFilmListe().size();
+        assertTrue(preLength > postLength,"fungerte ikke å slette film");
+    }
+    
+    @Test
+    public void testOmBillettFinnes() {
+        assertNotNull(HarryPotter, "billetten finnes ikke");
+    }
+
+    @Test
+    public void testOmKundeFinnes() {
+        assertNotNull(Per, "Kunden finnes ikke");
+    }
+
+    @Test
+    public void testOmKinoFinnes() {
+        assertNotNull(ålesundKino, "kinoen finnes ikke");
+    }
 
 }
