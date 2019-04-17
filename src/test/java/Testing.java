@@ -24,6 +24,8 @@ public class Testing {
         assertEquals(harryPotter, harryPotter);
     }
 
+    // Litt usikker om det er vits å ta med disse..
+
     @Test
     public void testOmBillettFinnes() {
         assertNotNull(HarryPotter, "billetten finnes ikke");
@@ -57,6 +59,15 @@ public class Testing {
     }
 
     @Test
+    public void testSaldoEtterKjøptBillett() {
+        int preSaldo = Per.getSaldo();
+        Per.kjopBilett(HarryPotter);
+        int postSaldo = Per.getSaldo();
+        assertTrue(preSaldo > postSaldo, "Saldoen ble ikke forandret");
+        
+    }
+
+    @Test
     public void AvbestillBillett() {
         // Må kjøpe en billett for å kunne avbestille
         Per.kjopBilett(HarryPotter);
@@ -65,6 +76,7 @@ public class Testing {
         int postLength = Per.billettListe.size();
         assertTrue(preLength > postLength, "avbestilt billett fungerer ikke");
     }
+
 
 
 }
