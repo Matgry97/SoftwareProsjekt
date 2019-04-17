@@ -86,7 +86,4 @@ public class Testing {
         int postSaldo = Per.getSaldo();
         assertTrue(preSaldo == postSaldo, "Saldoen ble ikke den samme som den opprinnelige");
     }
-
-
-
 }
