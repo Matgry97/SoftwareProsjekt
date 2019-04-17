@@ -80,5 +80,14 @@ public class Testing {
     public void trenger_Test_Test_test() {
         System.out.println("Hei dere andre");
     }
+    
+    @Test
+    public void testSaldoEtterAvbestilltBillett() {
+        int preSaldo = Per.getSaldo();
+        Per.kjopBilett(HarryPotter);
+        Per.avbestilleBilett(HarryPotter);
+        int postSaldo = Per.getSaldo();
+        assertTrue(preSaldo == postSaldo, "Saldoen ble ikke den samme som den opprinnelige");
+    }
 
 }
