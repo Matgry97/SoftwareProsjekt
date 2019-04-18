@@ -8,10 +8,12 @@ public class Billett {
         private int radnr;
         private int setenr;
         private int billettpris;
+
+        private int billettID;
         private String klokkeslett;
         private LocalDate dato;
 
-        public Billett(String filmnavn, String kinonavn, int salnr, int radnr, int setenr, int billettpris, String klokkeslett, LocalDate dato) {
+        public Billett(String filmnavn, String kinonavn, int salnr, int radnr, int setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
             this.filmnavn = filmnavn;
             this.kinonavn = kinonavn;
             this.salnr = salnr;
@@ -20,6 +22,7 @@ public class Billett {
             this.billettpris = billettpris;
             this.klokkeslett = klokkeslett;
             this.dato = dato;
+            this.billettID = billettID;
         }
 
         public String getFilmnavn() {

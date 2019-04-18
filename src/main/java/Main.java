@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-//yeet
     public static void main(String[] args) {
 
         // public List<Film> filmListe = new ArrayList<Film>();
@@ -11,7 +10,6 @@ public class Main {
         Kino AalesundVikKino = new Kino(3);
 
         Person person3 = new Person("Selger", "Selgesen", 18, 150);
-
         Kunde kunde1 = new Kunde(300);
 
         Selger selger1 = new Selger(person3);
@@ -20,7 +18,7 @@ public class Main {
         Film deltaForce = new Film("The Delta Force"," Mega heftig action",125, LocalDate.of(1986,10,2));
         Film escapeFromNewYork = new Film("Escape from New York"," Ultra heftig action",99, LocalDate.of(1981,12,26));
 
-        Billett billett = new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 150, "15:30", LocalDate.of(2014,3,3));
+        Billett billett = new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 150, "15:30", LocalDate.of(2014,3,3), 1);
 
         System.out.println(deltaForce);
 

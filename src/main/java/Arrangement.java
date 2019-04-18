@@ -18,6 +18,8 @@ public class Arrangement {
         this.tilgjengelighet = tilgjengelighet;
     }
 
+
+
     public String getNavn() {
         return navn;
     }
