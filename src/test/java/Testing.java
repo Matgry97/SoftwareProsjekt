@@ -17,6 +17,7 @@ public class Testing {
     Film harryPotter = new Film("Harry Potter", "magisk film", 100, LocalDate.of(2002, 12, 05));
     Billett FilmBillett = new Billett("Film1", "Kino1", 1,1,10, 150, "16:30", LocalDate.of(2019, 3, 30), 1);
     Kunde Kunde1 = new Kunde("mateusz", 149);
+    Selger pål = new Selger("pål");
     @Test
     public void test_Film_Eksisterer() {
         System.out.println(harryPotter);
