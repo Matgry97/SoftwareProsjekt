@@ -123,5 +123,17 @@ public class Testing {
     public void testOmKinoFinnes() {
         assertNotNull(ålesundKino, "kinoen finnes ikke");
     }
+    
+    @ParameterizedTest
+    @ValueSource(ints = {200, 300, 400})
+    public void testOpprettArrangement(int maxPlass) {
+      Arrangement A = pål.opprettArrangement("SkoleLan", "Halden", "skolelan i halden", maxPlass, "2020, 11, 15", true);
+        assertNotNull(A, "kunne ikke opprette arrangement");
+    }
+    
+    @Test
+    public void testErPerEnPerson() {
+        assertTrue(Per instanceof Person, "Per var ingen person");
+    }
 
 }
