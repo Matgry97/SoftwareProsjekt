@@ -14,7 +14,7 @@ public class Kunde extends Person {
 
     }
 
-    public void kjopBilett(Film.Billett billett) {
+    public void kjopBilett(Film.Billett billett, Selger selger) {
         int pris = billett.getBillettpris();
 
         if (this.saldo - pris >= 0) {
@@ -22,6 +22,8 @@ public class Kunde extends Person {
             this.saldo = saldo - pris;
             billettListe.add(billett);
             billett.setBilettID(this.unikId);
+            selger.setSaldo(selger.getSaldo() + billett.getBillettpris());
+
 
             System.out.println("Du har kjøpt billett til filmen " + billett.getTittel());
 

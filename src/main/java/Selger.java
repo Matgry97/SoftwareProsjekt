@@ -3,9 +3,11 @@ import java.util.List;
 public class Selger {
 
     private Person selger;
+    private int saldo;
 
-    public Selger(Person selger) {
+    public Selger(Person selger, int saldo) {
         this.selger = selger;
+        this.saldo = saldo;
     }
 
     public Person getSelger() {
@@ -29,5 +31,13 @@ public class Selger {
 
     public void removeKino(List list, Kino kino) {
         list.remove(kino);
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
 }
