@@ -31,9 +31,11 @@ public class Kunde extends Person {
 
 
             System.out.println("---|| Gjenstående Saldo på Konto ||--- \n" +
-                getSaldo() + " kroner"
+                getSaldo() + " kroner."
             );
 
+        } else {
+            System.out.println("Avist betaling");
         }
     }
 
