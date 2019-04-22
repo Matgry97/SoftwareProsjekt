@@ -13,6 +13,12 @@ public class Kunde extends Person {
         this.saldo = saldo;
 
     }
+    
+     public void KjopFlereBiletter(Film.Billett billett, int antall, Selger selger) {
+        for (int i = 0; i < antall; i++) {
+            kjopBilett(billett, selger);
+        }
+    }
 
     public void kjopBilett(Film.Billett billett, Selger selger) {
         int pris = billett.getBillettpris();
