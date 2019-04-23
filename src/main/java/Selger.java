@@ -3,17 +3,20 @@ import java.util.List;
 public class Selger {
 
     private Person selger;
+    private int saldo;
 
-    public Selger(Person selger) {
+    public Selger(Person selger, int saldo) {
         this.selger = selger;
+        this.saldo = saldo;
     }
 
-    public void opprettArrangement(String navn, String sted, String beskrivelse, int maxPlass, String dato, boolean tilgjengelighet){
+    public Arrangement opprettArrangement(String navn, String sted, String beskrivelse, int maxPlass, String dato, boolean tilgjengelighet){
         Arrangement arrangement = new Arrangement(navn, sted, beskrivelse, maxPlass, dato, tilgjengelighet);
-        System.out.println(arrangement);
+
+        return arrangement;
     }
 
-    public void settPris(Billett billett, int billettpris){
+    public void settPris(Film.Billett billett, int billettpris){
         billett.setBillettpris(billettpris);
     }
 
@@ -38,5 +41,13 @@ public class Selger {
 
     public void removeKino(List list, Kino kino) {
         list.remove(kino);
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
 }

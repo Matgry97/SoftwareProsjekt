@@ -4,33 +4,72 @@ import java.util.ArrayList;
 
 public class Kunde extends Person {
     private int saldo;
-    ArrayList<Billett> billettListe = new ArrayList<Billett>();
+    private Arrangement Arrangement;
+    private int unikId;
 
-   public Kunde(int saldo) {
-       this.saldo = saldo;
-   }
+    ArrayList<Film.Billett> billettListe = new ArrayList<Film.Billett>();
 
-   public void kjopBilett(Billett billett) {
-       //Trenger Test
-       if (saldo - billett.getBillettpris() >= 0) {
-           billettListe.add(billett);
-           setSaldo(saldo - billett.getBillettpris());
-       }
+    public Kunde(String fornavn, int saldo) {
 
-       System.out.println("Du har kjøpt billett til filmen " + billett.getFilmnavn());
-   }
+        this.saldo = saldo;
 
-   public void avbestilleBilett(Billett billett) {
-       //Trenger Test
-       billettListe.remove(billett);
-       setSaldo(this.saldo + billett.getBillettpris());
-
-       System.out.println("Du har fått tilbake: " + billett.getBillettpris() + " kroner, og billetten er refundert");
-   }
+    }
 
 
-    public void setSaldo(int Saldo) {this.saldo = saldo;}
+    public void kjopBilett(Film.Billett billett, Selger selger) {
+        int pris = billett.getBillettpris();
 
-    public int getSaldo() {return this.saldo;}
+        if (this.saldo - pris >= 0) {
+            this.unikId++;
+            this.saldo = saldo - pris;
+            billettListe.add(billett);
+            billett.setBilettID(this.unikId);
+            selger.setSaldo(selger.getSaldo() + billett.getBillettpris());
+
+
+            System.out.println("Du har kjøpt billett til filmen " + billett.getTittel());
+            System.out.println(billett.toString());
+
+
+
+            System.out.println("---|| Gjenstående Saldo på Konto ||--- \n" +
+                    getSaldo() + " kroner"
+            );
+
+        }
+        else {
+            System.out.println("Feil ved kjøp av billett!" + "\n" +  "Mangler " + (billett.getBillettpris()-saldo) + "kr");
+        }
+    }
+
+    public void KjopFlereBiletter(Film.Billett billett, int antall, Selger selger) {
+        for (int i = 0; i < antall; i++) {
+            kjopBilett(billett, selger);
+            billett.setBilettID(i);
+        }
+    }
+
+    public int idTeller (int counter) {
+        counter++;
+        return counter;
+    }
+
+    public void avbestilleBilett(Film.Billett billett) {
+        //Trenger Test
+        billettListe.remove(billett);
+        setSaldo(this.saldo + billett.getBillettpris());
+
+        System.out.println("Du har fått tilbake: " + billett.getBillettpris() + " kroner, og billetten er refundert");
+    }
+
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getSaldo() {
+        return this.saldo;
+    }
+
 
 }
