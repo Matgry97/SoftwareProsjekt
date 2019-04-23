@@ -1,5 +1,5 @@
 public class Arrangement {
-
+//
     private String navn;
     private String sted;
     private String beskrivelse;

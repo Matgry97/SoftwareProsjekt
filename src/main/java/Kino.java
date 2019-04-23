@@ -8,7 +8,7 @@ public class Kino extends Arrangement{
         this.antallSaler = antallSaler;
     }
 
-
+//
     public void leggTilFilm(Film.Billett film) {
         filmListe.add(film);
     }

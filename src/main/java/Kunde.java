@@ -15,7 +15,7 @@ public class Kunde extends Person {
 
     }
 
-
+//
     public void kjopBilett(Film.Billett billett, Selger selger) {
         int pris = billett.getBillettpris();
 

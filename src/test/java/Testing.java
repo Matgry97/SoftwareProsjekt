@@ -46,7 +46,7 @@ public class Testing {
 
         assertFalse(lagtTilLength < fjernFilmLenght, "Film er fjernet");
     }
-
+//
     @Test
     public void test_kunde_ikkeNokSaldo_kjopBillett() {
 

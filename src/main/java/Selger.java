@@ -4,7 +4,7 @@ public class Selger {
 
     private Person selger;
     private int saldo;
-
+//
     public Selger(Person selger, int saldo) {
         this.selger = selger;
         this.saldo = saldo;

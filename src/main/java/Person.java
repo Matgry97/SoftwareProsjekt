@@ -9,7 +9,7 @@ public class Person {
         this.etternavn = etternavn;
         this.alder = alder;
     }
-
+//
     public Person() {}
 
     public String getFornavn() {
