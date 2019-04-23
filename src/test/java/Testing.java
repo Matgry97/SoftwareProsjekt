@@ -72,4 +72,55 @@ public class Testing {
         assertFalse(KundeSaldoBeforeBuy > KundeSaldoAfterBuy, "Ikke nokk Saldo");
     }
 
+
+    //Flere TEster her pls før vi brenner ned
+
+    @Test
+    public void trenger_Test_Test_test() {
+        System.out.println("Hei dere andre");
+    }
+    
+    @Test
+    public void testSaldoEtterAvbestilltBillett() {
+        int preSaldo = Per.getSaldo();
+        Per.kjopBilett(HarryPotter);
+        Per.avbestilleBilett(HarryPotter);
+        int postSaldo = Per.getSaldo();
+        assertTrue(preSaldo == postSaldo, "Saldoen ble ikke den samme som den opprinnelige");
+    }
+    
+    @Test
+    public void AvbestillBillett() {
+        // Må kjøpe en billett for å kunne avbestille
+        Per.kjopBilett(HarryPotter);
+        int preLength = Per.billettListe.size();
+        Per.avbestilleBilett(HarryPotter);
+        int postLength = Per.billettListe.size();
+        assertTrue(preLength > postLength, "Avbestilt billett fungerer ikke");
+    }
+    
+    @Test
+    public void test_Slett_Film() {
+        ålesundKino.leggTilFilm(harryPotter);
+        int preLength = ålesundKino.getFilmListe().size();
+        ålesundKino.SlettFilm(harryPotter);
+        int postLength = ålesundKino.getFilmListe().size();
+        assertTrue(preLength > postLength,"fungerte ikke å slette film");
+    }
+    
+    @Test
+    public void testOmBillettFinnes() {
+        assertNotNull(HarryPotter, "billetten finnes ikke");
+    }
+
+    @Test
+    public void testOmKundeFinnes() {
+        assertNotNull(Per, "Kunden finnes ikke");
+    }
+
+    @Test
+    public void testOmKinoFinnes() {
+        assertNotNull(ålesundKino, "kinoen finnes ikke");
+    }
+
 }
