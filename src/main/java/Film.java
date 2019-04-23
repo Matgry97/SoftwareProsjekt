@@ -23,12 +23,6 @@ public class Film {
 
     //Oppdater og endre film
 
-
-    public void slettFilm(Film film) {
-        filmListe.remove(film);
-    }
-
-
     public String getTittel() {
         return tittel;
     }

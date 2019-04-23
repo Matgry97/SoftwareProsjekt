@@ -4,7 +4,7 @@ public class Person {
     private String etternavn;
     private int alder;
 
-    public Person(String fornavn, String etternavn, int alder, int saldo) {
+    public Person(String fornavn, String etternavn, int alder) {
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.alder = alder;
