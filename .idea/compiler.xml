@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="junit5params" />
         <module name="SEprosjekt" />
         <module name="SoftwareEngeneeringFAKk" />
         <module name="SoftwareProsjekt" />
@@ -13,5 +14,8 @@
         <module name="SoftwareProsjekt4" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="junit5params" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
