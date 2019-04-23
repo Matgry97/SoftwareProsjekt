@@ -45,14 +45,15 @@ public class Main {
         ArrayList<Film> filmListe = new ArrayList<Film>();
 
         Kino AalesundVikKino = new Kino(3);
-        Kunde kunde1 = new Kunde("mateusz", 150);
+        Kunde kunde1 = new Kunde("mateusz", 1000);
         Selger selger = new Selger(new Person("Asd", "das", 29), 300);
 
-        Film.Billett actionJackson = new Film("Action Jackson slår til igjen","Heftig action",93, LocalDate.of(1988,7,7)).new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 150, "15:30", LocalDate.of(2014,3,3), 1);
+        Film.Billett actionJackson = new Film("Action Jackson slår til igjen","Heftig action",93, LocalDate.of(1988,7,7)).new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 150, "15:30", LocalDate.of(2014,3,3));
         Film deltaForce = new Film("The Delta Force"," Mega heftig action",125, LocalDate.of(1986,10,2));
         Film escapeFromNewYork = new Film("Escape from New York"," Ultra heftig action",99, LocalDate.of(1981,12,26));
 
         kunde1.kjopBilett(actionJackson, selger);
+        kunde1.KjopFlereBiletter(actionJackson, 3, selger);
 
 
 

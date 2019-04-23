@@ -14,6 +14,7 @@ public class Kunde extends Person {
 
     }
 
+
     public void kjopBilett(Film.Billett billett, Selger selger) {
         int pris = billett.getBillettpris();
 
@@ -26,8 +27,6 @@ public class Kunde extends Person {
 
 
             System.out.println("Du har kjøpt billett til filmen " + billett.getTittel());
-
-
             System.out.println(billett.toString());
 
 
@@ -39,6 +38,13 @@ public class Kunde extends Person {
         }
         else {
             System.out.println("Feil ved kjøp av billett!" + "\n" +  "Mangler " + (billett.getBillettpris()-saldo) + "kr");
+        }
+    }
+
+    public void KjopFlereBiletter(Film.Billett billett, int antall, Selger selger) {
+        for (int i = 0; i < antall; i++) {
+            kjopBilett(billett, selger);
+            billett.setBilettID(i);
         }
     }
 
