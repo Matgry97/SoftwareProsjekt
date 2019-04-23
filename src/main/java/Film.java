@@ -90,18 +90,6 @@ public class Film {
             this.billettID = billettID;
         }
 
-        // Uten billettID
-        public Billett(String tittel, String kinonavn, int salnr, int radnr, int setenr, int billettpris, String klokkeslett, LocalDate dato) {
-            this.tittel = tittel;
-            this.kinonavn = kinonavn;
-            this.salnr = salnr;
-            this.radnr = radnr;
-            this.setenr = setenr;
-            this.billettpris = billettpris;
-            this.klokkeslett = klokkeslett;
-            this.dato = dato;
-        }
-
         public String getTittel() {
             return this.tittel;
         }
