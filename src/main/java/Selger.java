@@ -10,8 +10,8 @@ public class Selger {
         this.saldo = saldo;
     }
     
-     public Arrangement opprettArrangement(String navn, String sted, String beskrivelse, int maxPlass, String dato, boolean tilgjengelighet){
-        Arrangement arrangement = new Arrangement(navn, sted, beskrivelse, maxPlass, dato, tilgjengelighet);
+     public Arrangement opprettArrangement(String navn, String sted, String beskrivelse, int maxPlass, String dato){
+        Arrangement arrangement = new Arrangement(navn, sted, beskrivelse, maxPlass, dato);
 
         return arrangement;
     }
