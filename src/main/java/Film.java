@@ -40,6 +40,7 @@ public class Film {
     public class Billett {
             // Dette er for film
             private String tittel;
+            private String beskrivelse;
             private String kinonavn;
             private String radnr;
             private String setenr;
@@ -53,8 +54,9 @@ public class Film {
 
 
 
-        public Billett(String tittel, String kinonavn, String radnr, String setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
+        public Billett(String tittel, String beskrivelse, String kinonavn, String radnr, String setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
             this.tittel = tittel;
+            this.beskrivelse = beskrivelse;
             this.kinonavn = kinonavn;
             this.radnr = radnr;
             this.setenr = setenr;
@@ -66,6 +68,10 @@ public class Film {
 
         public String getTittel() {
             return this.tittel;
+        }
+
+        public String getBeskrivelse() {
+            return this.beskrivelse;
         }
 
         public int getBillettID() { return billettID;}
