@@ -123,12 +123,23 @@ public class Testing {
         Arrangement A = pål.opprettArrangement("SkoleLan", "Halden", "skolelan i halden", maxPlass);
         assertNotNull(A, "kunne ikke opprette arrangement");
     }
-    
-    @ParameterizedTest
-    @ValueSource(ints = {200, 300, 400})
-    public void testOpprettArrangement(int maxPlass) {
-      Arrangement A = pål.opprettArrangement("SkoleLan", "Halden", "skolelan i halden", maxPlass, "2020, 11, 15", true);
-        assertNotNull(A, "kunne ikke opprette arrangement");
+
+    @Test
+    public void test_Pris_Endret() {
+        int prePris = harryPotter.getBillettpris();
+        pål.settPris(harryPotter, 300);
+        int postPris = harryPotter.getBillettpris();
+        assertNotEquals(prePris, postPris, "pris ble ikke endret endret");
+    }
+
+    @Test
+    public void test_full_kino() {
+        for (int i=0; i<5; ++i) {
+            for (int j=0; j<5; ++j) {
+                ålesundKino.arrS[i][j]="X";
+            }
+        }
+        assertTrue(ålesundKino.isFull(),"det er ledige plasser");
     }
     
    

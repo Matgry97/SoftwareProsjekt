@@ -40,6 +40,10 @@ public class Selger {
         list.remove(kino);
     }
 
+    public void settPris(Film.Billett billett, int billettpris){
+        billett.setBillettpris(billettpris);
+    }
+
     public int getSaldo() {
         return saldo;
     }
