@@ -120,8 +120,7 @@ public class Film {
         public String toString() {
             return  "----|| Din bilett er ||----" + "\n" +
                     "Film :  " + getTittel() + " \n" +
-                    "Kino : " + this.kinonavn + "\n" +
-                    "Sete : " + this.setenr + "\n" +
+                    "Kino :  " + this.kinonavn + "\n" +
                     "Klokken : " + this.klokkeslett + "\n" +
                     "Pris : " + this.billettpris + "\n" +
                     "ID : " + this.billettID;

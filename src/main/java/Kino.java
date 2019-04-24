@@ -73,7 +73,6 @@ public class Kino extends Arrangement{
                 if (isAvailable(inData)) {
                     System.out.println("Du har reservert sete!");
 
-
                     kunde.kjopBilett(fb, selger);
                     System.out.println(fb.toString());
                     System.out.println("Sete : " + inData.toUpperCase() + "\n");
