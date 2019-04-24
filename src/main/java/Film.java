@@ -177,7 +177,6 @@ public class Film {
             return  "----|| Din bilett er ||----" + "\n" +
                     "Film :  " + getTittel() + " \n" +
                     "Kino : " + this.kinonavn + "\n" +
-                    "Sal : " + this.salnr + ", Rad : " + this.radnr + ", Sete : " + this.setenr + "\n" +
                     "Klokken : " + this.klokkeslett + "\n" +
                     "Pris : " + this.billettpris + "\n" +
                     "ID : " + this.billettID;

@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -47,7 +48,7 @@ public class Kino extends Arrangement{
         return true;
     }
 
-    public static void mainMethod() {  // Method that will check if all reservations were occupied
+    public static void mainMethod(Film.Billett fb, Selger selger, Kunde kunde) {  // Method that will check if all reservations were occupied
         String inData = new String("");
         for (i=0; i<5; ++i) {                                   // Initialized array with constant data
             for (j=0; j<5; ++j) {
@@ -66,10 +67,17 @@ public class Kino extends Arrangement{
             {
                 System.out.print("Enter Seat Reservation: ");
                 inData = input.next();
-                if (isAvailable(inData))
+                if (isAvailable(inData)) {
                     System.out.println("Reservation Successful!");
+
+                    kunde.kjopBilett(fb, selger);
+                    System.out.println(fb.toString());
+                    System.out.println("Sete : " + inData.toUpperCase() + "\n");
+
+                }
                 else
                     System.out.println("Occupied Seat!");
+
             }
         } while (!inData.equalsIgnoreCase("X"));
     }
