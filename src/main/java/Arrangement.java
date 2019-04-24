@@ -6,16 +6,14 @@ public class Arrangement {
     private String sted;
     private String beskrivelse;
     private int maxPlass;
-    private String dato;
 
-    public Arrangement() {this ("","","",0,""); }
+    public Arrangement() {this ("","","",0); }
 
-    public Arrangement(String navn, String sted, String beskrivelse, int maxPlass, String dato) {
+    public Arrangement(String navn, String sted, String beskrivelse, int maxPlass) {
         this.navn = navn;
         this.sted = sted;
         this.beskrivelse = beskrivelse;
         this.maxPlass = maxPlass;
-        this.dato = dato;
 
     }
 
@@ -49,13 +47,5 @@ public class Arrangement {
 
     public void setMaxPlass(int maxPlass) {
         this.maxPlass = maxPlass;
-    }
-
-    public String getDato() {
-        return dato;
-    }
-
-    public void setDato(String dato) {
-        this.dato = dato;
     }
 }
