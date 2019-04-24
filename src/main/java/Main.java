@@ -54,8 +54,12 @@ public class Main {
 
                 }
                 int menuChoice = scanner.nextInt();
+
+                //Kino.mainMethod(billettListe.get(menuChoice), KinoEier, a);
+                //System.out.println(Kino.mainMethod(billettListe.get(menuChoice), KinoEier, a));
                 a.kjopBilett(billettListe.get(menuChoice), KinoEier);
                 minBillettListe.add(billettListe.get(menuChoice));
+
 
 
             }

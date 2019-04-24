@@ -50,7 +50,7 @@ public class Kino extends Arrangement{
 
     }
 
-    public static void mainMethod(Film.Billett fb, Selger selger, Kunde kunde) {  // Method that will check if all reservations were occupied
+    public static String mainMethod(Film.Billett fb, Selger selger, Kunde kunde) {  // Method that will check if all reservations were occupied
         String inData = new String("");
         for (i=0; i<5; ++i) {                                   // Initialized array with constant data
             for (j=0; j<5; ++j) {
@@ -82,6 +82,7 @@ public class Kino extends Arrangement{
 
             }
         } while (!inData.equalsIgnoreCase("X"));
+        return inData;
     }
 
 
