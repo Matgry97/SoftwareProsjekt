@@ -7,17 +7,16 @@ public class Arrangement {
     private String beskrivelse;
     private int maxPlass;
     private String dato;
-    private boolean tilgjengelighet;
 
-    public Arrangement() {this ("","","",0,"", true ); }
+    public Arrangement() {this ("","","",0,""); }
 
-    public Arrangement(String navn, String sted, String beskrivelse, int maxPlass, String dato, boolean tilgjengelighet) {
+    public Arrangement(String navn, String sted, String beskrivelse, int maxPlass, String dato) {
         this.navn = navn;
         this.sted = sted;
         this.beskrivelse = beskrivelse;
         this.maxPlass = maxPlass;
         this.dato = dato;
-        this.tilgjengelighet = tilgjengelighet;
+
     }
 
     public String getNavn() {
@@ -58,13 +57,5 @@ public class Arrangement {
 
     public void setDato(String dato) {
         this.dato = dato;
-    }
-
-    public boolean isTilgjengelighet() {
-        return tilgjengelighet;
-    }
-
-    public void setTilgjengelighet(boolean tilgjengelighet) {
-        this.tilgjengelighet = tilgjengelighet;
     }
 }

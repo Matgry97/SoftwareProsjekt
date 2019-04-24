@@ -44,7 +44,6 @@ public class Film {
             private String radnr;
             private String setenr;
             private int billettpris;
-            private boolean tilgjengelig;
 
             //Felles variabler
             private int billettID;
@@ -54,7 +53,7 @@ public class Film {
 
 
 
-        public Billett(String tittel, String kinonavn, String radnr, String setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID, boolean tilgjengelig) {
+        public Billett(String tittel, String kinonavn, String radnr, String setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
             this.tittel = tittel;
             this.kinonavn = kinonavn;
             this.radnr = radnr;
@@ -63,7 +62,6 @@ public class Film {
             this.klokkeslett = klokkeslett;
             this.dato = dato;
             this.billettID = billettID;
-            this.tilgjengelig = tilgjengelig;
         }
 
         public String getTittel() {
@@ -120,10 +118,6 @@ public class Film {
 
         public void setDato(LocalDate dato) {
             this.dato = dato;
-        }
-        
-        public boolean isTilgjengel;ig() {
-            return tilgjengelig;    
         }
 
         @Override
