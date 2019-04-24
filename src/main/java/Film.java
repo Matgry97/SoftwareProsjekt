@@ -5,7 +5,6 @@ public class Film {
 
     private String tittel;
     private String beskrivelse;
-    private int spilletid;
     private LocalDate utgivDato;
     ArrayList<Film> filmListe = new ArrayList<Film>();
 
@@ -14,52 +13,28 @@ public class Film {
     // public Person skuespiller;
 
 
-    public Film(String tittel, String beskrivelse, int spilletid, LocalDate utgivDato) {
+    public Film(String tittel, String beskrivelse, LocalDate utgivDato) {
         this.tittel = tittel;
         this.beskrivelse = beskrivelse;
-        this.spilletid = spilletid;
         this.utgivDato = utgivDato;
     }
 
     //Oppdater og endre film
 
 
-    public void slettFilm(Film film) {
-        filmListe.remove(film);
-    }
+    public void slettFilm(Film film) { filmListe.remove(film); }
 
+    public String getTittel() { return tittel; }
 
-    public String getTittel() {
-        return tittel;
-    }
+    public void setTittel(String tittel) { this.tittel = tittel; }
 
-    public void setTittel(String tittel) {
-        this.tittel = tittel;
-    }
+    public String getBeskrivelse() { return beskrivelse; }
 
-    public String getBeskrivelse() {
-        return beskrivelse;
-    }
+    public void setBeskrivelse(String beskrivelse) { this.beskrivelse = beskrivelse; }
 
-    public void setBeskrivelse(String beskrivelse) {
-        this.beskrivelse = beskrivelse;
-    }
+    public LocalDate getUtgivDato() { return utgivDato; }
 
-    public int getSpilletid() {
-        return spilletid;
-    }
-
-    public void setSpilletid(int spilletid) {
-        this.spilletid = spilletid;
-    }
-
-    public LocalDate getUtgivDato() {
-        return utgivDato;
-    }
-
-    public void setUtgivDato(LocalDate utgivDato) {
-        this.utgivDato = utgivDato;
-    }
+    public void setUtgivDato(LocalDate utgivDato) { this.utgivDato = utgivDato; }
 
     @Override
     public String toString() {
@@ -71,9 +46,8 @@ public class Film {
             // Dette er for film
             private String tittel;
             private String kinonavn;
-            private int salnr;
-            private int radnr;
-            private int setenr;
+            private String radnr;
+            private String setenr;
             private int billettpris;
 
             //Felles variabler
@@ -84,28 +58,15 @@ public class Film {
 
 
 
-        public Billett(String tittel, String kinonavn, int salnr, int radnr, int setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
+        public Billett(String tittel, String kinonavn, String radnr, String setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
             this.tittel = tittel;
             this.kinonavn = kinonavn;
-            this.salnr = salnr;
             this.radnr = radnr;
             this.setenr = setenr;
             this.billettpris = billettpris;
             this.klokkeslett = klokkeslett;
             this.dato = dato;
             this.billettID = billettID;
-        }
-
-        // Uten billettID
-        public Billett(String tittel, String kinonavn, int salnr, int radnr, int setenr, int billettpris, String klokkeslett, LocalDate dato) {
-            this.tittel = tittel;
-            this.kinonavn = kinonavn;
-            this.salnr = salnr;
-            this.radnr = radnr;
-            this.setenr = setenr;
-            this.billettpris = billettpris;
-            this.klokkeslett = klokkeslett;
-            this.dato = dato;
         }
 
         public String getTittel() {
@@ -124,29 +85,19 @@ public class Film {
             this.kinonavn = kinonavn;
         }
 
-        public int getSalnr() {
-            return salnr;
-        }
-
-        public void setSalnr(int salnr) {
-            this.salnr = salnr;
-        }
-
-        public int getRadnr() {
+        public String getRadnr() {
             return radnr;
         }
 
-        public void setRadnr(int radnr) {
+        public void setRadnr(String radnr) {
             this.radnr = radnr;
         }
 
-        public int getSetenr() {
+        public String getSetenr() {
             return setenr;
         }
 
-        public void setSetenr(int setenr) {
-            this.setenr = setenr;
-        }
+        public void setSetenr(String setenr) { this.setenr = setenr; }
 
         public int getBillettpris() {
             return billettpris;
@@ -177,7 +128,7 @@ public class Film {
             return  "----|| Din bilett er ||----" + "\n" +
                     "Film :  " + getTittel() + " \n" +
                     "Kino : " + this.kinonavn + "\n" +
-                    "Sal : " + this.salnr + ", Rad : " + this.radnr + ", Sete : " + this.setenr + "\n" +
+                    "Rad : " + this.radnr + ", Sete : " + this.setenr + "\n" +
                     "Klokken : " + this.klokkeslett + "\n" +
                     "Pris : " + this.billettpris + "\n" +
                     "ID : " + this.billettID;

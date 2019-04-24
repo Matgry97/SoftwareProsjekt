@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +14,6 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-
         String userName = scanner.next();
         Kunde a = new Kunde(scanner.nextLine(), "", 0,200);
 
@@ -23,15 +21,16 @@ public class Main {
 
         int userAlder = scanner.nextInt();
 
-        Person user = new Person(userName ,"", userAlder );
+        Person user = new Person(userName ,"", userAlder);
         System.out.println(user);
         Person Selger = new Person("Ola", "Normann", 20);
         Selger KinoEier = new Selger(Selger, 0);
 
+        System.out.println("Velg film å bestille");
 
 
-        Film.Billett billett1 = new Film("legofilmen", "Ålesund kino", 2,  LocalDate.of(2014,3,3)).new Billett("emojifilmen", "Ålesund kino", 1, 3,2, 150, "14:30", LocalDate.of(2015,3,3), 2);
-        Film.Billett billett2 = new Film("emojifilmen", "Ålesund kino", 3,  LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", 1, 3,2, 150, "14:30", LocalDate.of(2015,3,3), 1);
+        Film.Billett billett1 = new Film("legofilmen", "Ålesund kino",  LocalDate.of(2014,3,3)).new Billett("emojifilmen", "Ålesund kino", "1A", "1",150, "14:30", LocalDate.of(2015,3,3), 2);
+        Film.Billett billett2 = new Film("emojifilmen", "Ålesund kino",  LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", "2A","2", 150, "14:30", LocalDate.of(2015,3,3), 1);
         billettListe.add(billett1);
         billettListe.add(billett2);
 
@@ -53,6 +52,7 @@ public class Main {
         else if (userChoice == 2) {
             System.out.println(".");
         }
+
 
 
 
