@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +8,7 @@ public class Main {
     static List<Film.Billett> billettListe = new ArrayList<Film.Billett>();
     static List<Film> filmListeSelger = new ArrayList<Film>();
     static Scanner scanner;
+    static List<Film.Billett> minBillettListe = new ArrayList<Film.Billett>();
 
     public static void main(String[] args) {
         int check = 1;
@@ -35,13 +35,14 @@ public class Main {
             Selger KinoEier = new Selger(Selger, 0);
 
 
-            Film.Billett billett1 = new Film("LegoFilm", "Bergen Kino", 1, LocalDate.of(2014, 3, 3)).new Billett();
-            //Film.Billett billett2 = new Film("Batman", "Ålesund kino",  1, LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", "","", 175, "14:30", LocalDate.of(2015,3,3), 1);
+            Film.Billett billett1 = new Film("Batman", "Ålesund kino",  1, LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", 1,1, 175, 100, "15:30", LocalDate.of(2015,3,3), 1);
+            Film.Billett billett2 = new Film("Batman", "Ålesund kino",  1, LocalDate.of(2015,3,3)).new Billett("Batmanfilmen", "Ålesund kino", 1,1, 175, 100, "15:30", LocalDate.of(2015,3,3), 1);
             billettListe.add(billett1);
+            billettListe.add(billett2);
 
             while (check == 1) {
 
-            System.out.println("1) Kjøp billett" + "\n" + "2) Selger "
+            System.out.println("1) Kjøp billett" + "\n" + "2) Kjøp flere billetter" + "\n" + "3) Selger" + "\n" + "4) Mine billetter"
             );
 
             int userChoice = scanner.nextInt();
@@ -54,7 +55,25 @@ public class Main {
                 }
                 int menuChoice = scanner.nextInt();
                 a.kjopBilett(billettListe.get(menuChoice), KinoEier);
-            } else if (userChoice == 2) {
+                minBillettListe.add(billettListe.get(menuChoice));
+
+
+            }
+
+            if (userChoice == 2) {
+                System.out.println("    ---|| Velg film || ---");
+                for (int i = 0; i < billettListe.size(); i++) {
+                    System.out.println(i + ") " + billettListe.get(i).getTittel() + " - " + billettListe.get(i).getBillettpris()); }
+                    int menuChoice = scanner.nextInt();
+                    System.out.println("Antall billetter: ");
+                    int antall = scanner.nextInt();
+
+                    a.KjopFlereBiletter(billettListe.get(menuChoice), antall, KinoEier);
+                    minBillettListe.add(billettListe.get(menuChoice));
+
+                }
+
+                else if (userChoice == 3) {
 
                 System.out.println("1) Legg ny Film" + "\n" + "2) Slett eksisterende filmer"
                 );
@@ -63,48 +82,63 @@ public class Main {
 
                 if (selgerChoice == 1) {
 
-                    lagFilm();
+                    selgerLagFilm();
 
 
                 } else if (selgerChoice == 2) {
-                    System.out.println("    ---|| Hvilken film vil du slette? || ---");
-                    for (int i = 0; i < filmListeSelger.size(); i++) {
-                        System.out.println(i + ") " + filmListeSelger.get(i).getTittel());
-                    }
-
-                    int slettFilmScan = scanner.nextInt();
-
-                    if (filmListeSelger.isEmpty()) {
-                        System.out.println("Det finnes ingen filmer");
-                        System.out.println("------------------------");
-                        System.out.println("Lag en film først!");
-
-                    } else {
-                        if (!filmListeSelger.isEmpty()) {
-                            filmListeSelger.remove(slettFilmScan);
-                        }
-                    }
-
-                    System.out.println(filmListeSelger);
-                    System.out.println("Ingen flere filmer å slette" + "\n");
-                    System.out.println("1) Legg til ny Film" + "\n" + "2) Slett eksisterende filmer");
-
+                    selgerSlettFilm();
                     selgerChoice = scanner.nextInt();
                     if (selgerChoice == 1) {
-                        lagFilm();
+                        selgerLagFilm();
                     } else {
                         System.out.println("err");
                     }
 
                 }
+            } else if (userChoice == 4) {
+                if (!minBillettListe.isEmpty()) {
+                    for (int i = 0; i < minBillettListe.size(); i++) {
+                    System.out.println("\n" + minBillettListe.get(i) + "\n");
+                    }
+                }
+                else {
+                    System.out.println("Ingen billetter tilgjengelig for bruker");
+                }
 
-
-            } //her på vi loope til start. {
+                }
 
         }
     }
 
-    private static void lagFilm() {
+    private static void selgerSlettFilm() {
+        scanner = new Scanner(System.in);
+        System.out.println("    ---|| Hvilken film vil du slette? || ---");
+        if (!filmListeSelger.isEmpty()) {
+            for (int i = 0; i < filmListeSelger.size(); i++) {
+                System.out.println(i + ") " + filmListeSelger.get(i).getTittel());
+            }
+        }
+        else {
+            System.out.println("Ingen filmer");
+        }
+
+        //int slettFilmScan = scanner.nextInt();
+
+        if (filmListeSelger.isEmpty()) {
+            System.out.println("Det finnes ingen filmer");
+            System.out.println("------------------------");
+            System.out.println("Lag en film først!");
+
+        } else {
+            if (!filmListeSelger.isEmpty()) {
+                int slettFilmScan = scanner.nextInt();
+                filmListeSelger.remove(slettFilmScan);
+            }
+        }
+        System.out.println("1) Legg til ny Film" + "\n" + "2) Slett eksisterende filmer");
+    }
+
+    private static void selgerLagFilm() {
         scanner = new Scanner(System.in);
 
         Film selgerFilm = new Film();
