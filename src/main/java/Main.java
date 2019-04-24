@@ -26,11 +26,9 @@ public class Main {
         Person Selger = new Person("Ola", "Normann", 20);
         Selger KinoEier = new Selger(Selger, 0);
 
-        System.out.println("Velg film å bestille");
 
-
-        Film.Billett billett1 = new Film("legofilmen", "Ålesund kino",  LocalDate.of(2014,3,3)).new Billett("emojifilmen", "Ålesund kino", "1A", "1",150, "14:30", LocalDate.of(2015,3,3), 2);
-        Film.Billett billett2 = new Film("emojifilmen", "Ålesund kino",  LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", "2A","2", 150, "14:30", LocalDate.of(2015,3,3), 1);
+        Film.Billett billett1 = new Film("LegoFilm", "Bergen Kino",  LocalDate.of(2014,3,3)).new Billett("emojifilmen", "Ålesund kino", "1A", "1",150, "14:30", LocalDate.of(2015,3,3), 2);
+        Film.Billett billett2 = new Film("Batman", "Ålesund kino",  LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", "2A","2", 175, "14:30", LocalDate.of(2015,3,3), 1);
         billettListe.add(billett1);
         billettListe.add(billett2);
 
@@ -42,6 +40,7 @@ public class Main {
         int userChoice = scanner.nextInt();
 
         if (userChoice == 1) {
+            System.out.println("    ---|| Velg film || ---");
             for (int i = 0; i < billettListe.size(); i++) {
                 System.out.println(i + ") " + billettListe.get(i).getTittel() + " - " + billettListe.get(i).getBillettpris());
 
