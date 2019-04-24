@@ -2,9 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Kino extends Arrangement{
-    private int radnr;
-    private int bokstav;
     private ArrayList<Film.Billett> filmListe = new ArrayList<Film.Billett>();
+
+    public Kino(String navn, String sted, String beskrivelse, int maxPlass, String dato, ArrayList<Film.Billett> filmListe) {
+        super(navn, sted, beskrivelse, maxPlass, dato);
+        this.filmListe = filmListe;
+    }
 
     static Scanner input = new Scanner(System.in);
     static String arrS[][] = new String[5][5];
@@ -97,20 +100,5 @@ public class Kino extends Arrangement{
         this.filmListe = filmListe;
     }
 
-    public int getRadnr() {
-        return radnr;
-    }
-
-    public void setRadnr(int radnr) {
-        this.radnr = radnr;
-    }
-
-    public int getBokstav() {
-        return bokstav;
-    }
-
-    public void setBokstav(int bokstav) {
-        this.bokstav = bokstav;
-    }
 }
 
