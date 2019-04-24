@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class Kunde extends Person {
@@ -9,7 +7,8 @@ public class Kunde extends Person {
 
     ArrayList<Film.Billett> billettListe = new ArrayList<Film.Billett>();
 
-    public Kunde(String fornavn, int saldo) {
+    public Kunde(String fornavn, String etternavn, int alder, int saldo) {
+        super(fornavn, etternavn, alder);
         this.saldo = saldo;
 
     }
@@ -32,9 +31,8 @@ public class Kunde extends Person {
 
 
             System.out.println("---|| Gjenstående Saldo på Konto ||--- \n" +
-                getSaldo() + " kroner"
+                getSaldo() + " kroner."
             );
-
         }
         else {
             System.out.println("Feil ved kjøp av billett!" + "\n" +  "Mangler " + (billett.getBillettpris()-saldo) + "kr");
@@ -48,13 +46,8 @@ public class Kunde extends Person {
         }
     }
 
-    public int idTeller (int counter) {
-        counter++;
-        return counter;
-    }
 
     public void avbestilleBilett(Film.Billett billett) {
-        //Trenger Test
         billettListe.remove(billett);
         setSaldo(this.saldo + billett.getBillettpris());
 

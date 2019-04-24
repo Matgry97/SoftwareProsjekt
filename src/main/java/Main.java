@@ -8,19 +8,33 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /*
-        List<Billett> billettListe = new ArrayList<Billett>();
 
+        List<Film.Billett> billettListe = new ArrayList<Film.Billett>();
+
+        System.out.println("Skriv inn et brukernavn");
 
         Scanner scanner = new Scanner(System.in);
 
         String userName = scanner.next();
-        Kunde a = new Kunde(scanner.nextLine(), 200);
+        Kunde a = new Kunde(scanner.nextLine(), "", 0,200);
 
-        Billett billett1 = new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 90, "15:30", LocalDate.of(2014,3,3),1);
-        Billett billett2 = new Billett("emojifilmen", "Ålesund kino", 3, 3, 12, 300, "14:30", LocalDate.of(2015,3,3),1 );
+        System.out.println("Hva er din alder?");
+
+        int userAlder = scanner.nextInt();
+
+        Person user = new Person(userName ,"", userAlder );
+        System.out.println(user);
+        Person Selger = new Person("Ola", "Normann", 20);
+        Selger KinoEier = new Selger(Selger, 0);
+
+
+
+        Film.Billett billett1 = new Film("legofilmen", "Ålesund kino", 2,  LocalDate.of(2014,3,3)).new Billett("emojifilmen", "Ålesund kino", 1, 3,2, 150, "14:30", LocalDate.of(2015,3,3), 2);
+        Film.Billett billett2 = new Film("emojifilmen", "Ålesund kino", 3,  LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", 1, 3,2, 150, "14:30", LocalDate.of(2015,3,3), 1);
         billettListe.add(billett1);
         billettListe.add(billett2);
+
+
 
         System.out.println("1) Kjøp billett" + "\n" + "2) Selger"
         );
@@ -29,23 +43,22 @@ public class Main {
 
         if (userChoice == 1) {
             for (int i = 0; i < billettListe.size(); i++) {
-                System.out.println(i + ") " + billettListe.get(i).getFilmnavn() + " - " + billettListe.get(i).getBillettpris());
+                System.out.println(i + ") " + billettListe.get(i).getTittel() + " - " + billettListe.get(i).getBillettpris());
 
             }
             int menuChoice = scanner.nextInt();
-            a.kjopBilett(billettListe.get(menuChoice));
+            a.kjopBilett(billettListe.get(menuChoice), KinoEier);
         }
         else if (userChoice == 2) {
             System.out.println(".");
         }
-        */
 
 
-
+        
         ArrayList<Film> filmListe = new ArrayList<Film>();
 
         Kino AalesundVikKino = new Kino(3);
-        Kunde kunde1 = new Kunde("mateusz", 1000);
+        Kunde kunde1 = new Kunde("ola", "normann",20, 1000);
         Selger selger = new Selger(new Person("Asd", "das", 29), 300);
         //String tittel, String kinonavn, Kino kino, int billettpris, String klokkeslett, LocalDate dato)
         Film.Billett actionJackson = new Film("Action Jackson slår til igjen","Heftig action",93, LocalDate.of(1988,7,7)).new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 150, "15:30", LocalDate.of(2014,3,3), 1);
@@ -54,11 +67,6 @@ public class Main {
 
         kunde1.kjopBilett(actionJackson, selger);
         kunde1.KjopFlereBiletter(actionJackson, 3, selger);
-
-        Kino.mainMethod();
-
-
-
 
 
 

@@ -74,7 +74,6 @@ public class Film {
             private int salnr;
             private int radnr;
             private int setenr;
-            private Kino kino;
             private int billettpris;
 
             //Felles variabler
@@ -98,10 +97,12 @@ public class Film {
         }
 
         // Uten billettID
-        public Billett(String tittel, String kinonavn, Kino kino, int billettpris, String klokkeslett, LocalDate dato) {
+        public Billett(String tittel, String kinonavn, int salnr, int radnr, int setenr, int billettpris, String klokkeslett, LocalDate dato) {
             this.tittel = tittel;
             this.kinonavn = kinonavn;
-            this.kino = kino;
+            this.salnr = salnr;
+            this.radnr = radnr;
+            this.setenr = setenr;
             this.billettpris = billettpris;
             this.klokkeslett = klokkeslett;
             this.dato = dato;
