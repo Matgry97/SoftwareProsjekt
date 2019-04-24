@@ -14,8 +14,8 @@ public class Main {
         int check = 1;
 
 
-            //Film bergen = new Film("LegoFilm", "Bergen Kino",  LocalDate.of(2014,3,3));
-            Film bergen = new Film("LegoFilm", "Bergen Kino", 1, LocalDate.of(2014, 3, 3));
+
+            Film bergen = new Film("LegoFilm", "Bergen Kino", LocalDate.of(2014, 3, 3));
             filmListeSelger.add(bergen);
 
             System.out.println("Skriv inn et brukernavn");
@@ -35,8 +35,8 @@ public class Main {
             Selger KinoEier = new Selger(Selger, 0);
 
 
-            Film.Billett billett1 = new Film("Batman", "Ålesund kino",  1, LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", 1,1, 175, 100, "15:30", LocalDate.of(2015,3,3), 1);
-            Film.Billett billett2 = new Film("Batman", "Ålesund kino",  1, LocalDate.of(2015,3,3)).new Billett("Batmanfilmen", "Ålesund kino", 1,1, 175, 100, "15:30", LocalDate.of(2015,3,3), 1);
+            Film.Billett billett1 = new Film("Batman", "Ålesund kino", LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", "","", "", 100, "15:30", LocalDate.of(2015,3,3), 1);
+            Film.Billett billett2 = new Film("Batman", "Ålesund kino", LocalDate.of(2015,3,3)).new Billett("Batmanfilmen", "Ålesund kino", "","", "", 100, "15:30", LocalDate.of(2015,3,3), 1);
             billettListe.add(billett1);
             billettListe.add(billett2);
 
