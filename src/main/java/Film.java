@@ -42,7 +42,6 @@ public class Film {
             private String tittel;
             private String beskrivelse;
             private String kinonavn;
-            private String radnr;
             private String setenr;
             private int billettpris;
 
@@ -54,11 +53,10 @@ public class Film {
 
 
 
-        public Billett(String tittel, String beskrivelse, String kinonavn, String radnr, String setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
+        public Billett(String tittel, String beskrivelse, String kinonavn, String setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
             this.tittel = tittel;
             this.beskrivelse = beskrivelse;
             this.kinonavn = kinonavn;
-            this.radnr = radnr;
             this.setenr = setenr;
             this.billettpris = billettpris;
             this.klokkeslett = klokkeslett;
@@ -84,14 +82,6 @@ public class Film {
 
         public void setKinonavn(String kinonavn) {
             this.kinonavn = kinonavn;
-        }
-
-        public String getRadnr() {
-            return radnr;
-        }
-
-        public void setRadnr(String radnr) {
-            this.radnr = radnr;
         }
 
         public String getSetenr() {
@@ -131,7 +121,7 @@ public class Film {
             return  "----|| Din bilett er ||----" + "\n" +
                     "Film :  " + getTittel() + " \n" +
                     "Kino : " + this.kinonavn + "\n" +
-                    "Rad : " + this.radnr + ", Sete : " + this.setenr + "\n" +
+                    "Sete : " + this.setenr + "\n" +
                     "Klokken : " + this.klokkeslett + "\n" +
                     "Pris : " + this.billettpris + "\n" +
                     "ID : " + this.billettID;
