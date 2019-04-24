@@ -47,12 +47,13 @@ public class Kunde extends Person {
     }
 
 
-    public void avbestilleBilett(Film.Billett billett) {
-        billettListe.remove(billett);
-        setSaldo(this.saldo + billett.getBillettpris());
+     public void avbestilleBilett(Film.Billett billett, Kino kino) {
+            billettListe.remove(billett);
+            setSaldo(this.saldo + billett.getBillettpris());
+            System.out.println("Du har fått tilbake: " + billett.getBillettpris() + " kroner, og billetten er refundert");
+        }
 
-        System.out.println("Du har fått tilbake: " + billett.getBillettpris() + " kroner, og billetten er refundert");
-    }
+
 
 
     public void setSaldo(int saldo) {

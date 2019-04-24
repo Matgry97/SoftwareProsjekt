@@ -1,10 +1,8 @@
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Kino extends Arrangement{
     int antallSaler;
-    private int salnr;
     private int radnr;
     private int bokstav;
     private ArrayList<Film.Billett> filmListe = new ArrayList<Film.Billett>();
@@ -42,10 +40,12 @@ public class Kino extends Arrangement{
             for (j=0; j<5; ++j) {
                 if (!(arrS[i][j]).equals("X")) {
                     return false;
+
                 }
             }
         }
         return true;
+
     }
 
     public static void mainMethod(Film.Billett fb, Selger selger, Kunde kunde) {  // Method that will check if all reservations were occupied
@@ -102,14 +102,6 @@ public class Kino extends Arrangement{
 
     public void setFilmListe(ArrayList<Film.Billett> filmListe) {
         this.filmListe = filmListe;
-    }
-
-    public int getAntallSaler() {
-        return antallSaler;
-    }
-
-    public void setAntallSaler(int antallSaler) {
-        this.antallSaler = antallSaler;
     }
 
     public int getRadnr() {
