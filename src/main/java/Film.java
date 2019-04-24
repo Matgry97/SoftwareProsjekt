@@ -15,6 +15,8 @@ public class Film {
         this.utgivDato = utgivDato;
     }
 
+    public Film(){};
+
     public void slettFilm(Film film) { filmListe.remove(film); }
 
     public String getTittel() { return tittel; }
