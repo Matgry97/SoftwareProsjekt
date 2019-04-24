@@ -8,6 +8,8 @@ public class Film {
     private LocalDate utgivDato;
     ArrayList<Film> filmListe = new ArrayList<Film>();
 
+    //EEE
+
 
     public Film(String tittel, String beskrivelse, LocalDate utgivDato) {
         this.tittel = tittel;
@@ -15,7 +17,7 @@ public class Film {
         this.utgivDato = utgivDato;
     }
 
-    public Film(){};
+    public Film(){}
 
     public void slettFilm(Film film) { filmListe.remove(film); }
 
