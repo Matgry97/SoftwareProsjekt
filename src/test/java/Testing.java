@@ -71,7 +71,7 @@ public class Testing {
     public void testSaldoEtterAvbestilltBillett() {
         int preSaldo = Per.getSaldo();
         Per.kjopBilett(harryPotter,pål);
-        Per.avbestilleBilett(harryPotter);
+        Per.avbestilleBilett(harryPotter, ålesundKino);
         int postSaldo = Per.getSaldo();
         assertTrue(preSaldo == postSaldo, "Saldoen ble ikke den samme som den opprinnelige");
     }
@@ -81,7 +81,7 @@ public class Testing {
         // Må kjøpe en billett for å kunne avbestille
         Per.kjopBilett(harryPotter, pål);
         int preLength = Per.billettListe.size();
-        Per.avbestilleBilett(harryPotter);
+        Per.avbestilleBilett(harryPotter, ålesundKino);
         int postLength = Per.billettListe.size();
         assertTrue(preLength > postLength, "Avbestilt billett fungerer ikke");
     }
