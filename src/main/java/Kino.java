@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Kino extends Arrangement{
-    int antallSaler;
     private int radnr;
     private int bokstav;
     private ArrayList<Film.Billett> filmListe = new ArrayList<Film.Billett>();
@@ -82,12 +81,6 @@ public class Kino extends Arrangement{
         } while (!inData.equalsIgnoreCase("X"));
     }
 
-
-
-
-    public Kino(int antallSaler) {
-        this.antallSaler = antallSaler;
-    }
 
 
     public void leggTilFilm(Film.Billett film) {
