@@ -123,6 +123,15 @@ public class Testing {
         Arrangement A = pål.opprettArrangement("SkoleLan", "Halden", "skolelan i halden", maxPlass);
         assertNotNull(A, "kunne ikke opprette arrangement");
     }
+    
+    @ParameterizedTest
+    @ValueSource(ints = {200, 300, 400})
+    public void testOpprettArrangement(int maxPlass) {
+      Arrangement A = pål.opprettArrangement("SkoleLan", "Halden", "skolelan i halden", maxPlass, "2020, 11, 15", true);
+        assertNotNull(A, "kunne ikke opprette arrangement");
+    }
+    
+   
 
 
 }
