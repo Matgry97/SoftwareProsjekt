@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class Kino extends Arrangement{
     private ArrayList<Film.Billett> filmListe = new ArrayList<Film.Billett>();
 
-    public Kino(String navn, String sted, String beskrivelse, int maxPlass, String dato, ArrayList<Film.Billett> filmListe) {
-        super(navn, sted, beskrivelse, maxPlass, dato);
+    public Kino(String navn, String sted, String beskrivelse, int maxPlass, ArrayList<Film.Billett> filmListe) {
+        super(navn, sted, beskrivelse, maxPlass);
         this.filmListe = filmListe;
     }
 

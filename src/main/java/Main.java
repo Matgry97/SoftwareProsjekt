@@ -33,8 +33,8 @@ public class Main {
         Selger KinoEier = new Selger(Selger, 0);
 
 
-        Film.Billett billett1 = new Film("LegoFilm", "Bergen Kino",  LocalDate.of(2014,3,3)).new Billett("emojifilmen", "Ålesund kino", "", "",150, "14:30", LocalDate.of(2015,3,3), 2);
-        Film.Billett billett2 = new Film("Batman", "Ålesund kino",  LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", "","", 175, "14:30", LocalDate.of(2015,3,3), 1);
+        Film.Billett billett1 = new Film("LegoFilm", "Bergen Kino",  LocalDate.of(2014,3,3)).new Billett("emojifilmen", "Ålesund kino", "", "","", 150, "14:30", LocalDate.of(2015,3,3), 2);
+        Film.Billett billett2 = new Film("Batman", "Ålesund kino",  LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino","","","", 175, "14:30", LocalDate.of(2015,3,3), 1);
         billettListe.add(billett1);
         billettListe.add(billett2);
 
@@ -48,8 +48,7 @@ public class Main {
         if (userChoice == 1) {
             System.out.println("    ---|| Velg film || ---");
             for (int i = 0; i < billettListe.size(); i++) {
-                System.out.println(i + ") " + billettListe.get(i).getTittel() + " - " + billettListe.get(i).getBillettpris());
-
+                System.out.println(i + ") " + billettListe.get(i).getTittel() + " - pris: " + billettListe.get(i).getBillettpris() + " - beskrivelse: " + billettListe.get(i).getBeskrivelse() + " - klokkeslett: " + billettListe.get(i).getKlokkeslett());
             }
             int menuChoice = scanner.nextInt();
             a.kjopBilett(billettListe.get(menuChoice), KinoEier);
