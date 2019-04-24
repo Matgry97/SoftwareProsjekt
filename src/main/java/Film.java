@@ -5,6 +5,7 @@ public class Film {
 
     private String tittel;
     private String beskrivelse;
+    private int spilletid;
     private LocalDate utgivDato;
     ArrayList<Film> filmListe = new ArrayList<Film>();
 
@@ -13,9 +14,10 @@ public class Film {
     // public Person skuespiller;
 
 
-    public Film(String tittel, String beskrivelse, LocalDate utgivDato) {
+    public Film(String tittel, String beskrivelse, int spilletid, LocalDate utgivDato) {
         this.tittel = tittel;
         this.beskrivelse = beskrivelse;
+        this.spilletid = spilletid;
         this.utgivDato = utgivDato;
     }
 
@@ -46,8 +48,9 @@ public class Film {
             // Dette er for film
             private String tittel;
             private String kinonavn;
-            private String radnr;
-            private String setenr;
+            private int salnr;
+            private int radnr;
+            private int setenr;
             private int billettpris;
 
             //Felles variabler
@@ -58,15 +61,28 @@ public class Film {
 
 
 
-        public Billett(String tittel, String kinonavn, String radnr, String setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
+        public Billett(String tittel, String kinonavn, int salnr, int radnr, int setenr, int billettpris, String klokkeslett, LocalDate dato, int billettID) {
             this.tittel = tittel;
             this.kinonavn = kinonavn;
+            this.salnr = salnr;
             this.radnr = radnr;
             this.setenr = setenr;
             this.billettpris = billettpris;
             this.klokkeslett = klokkeslett;
             this.dato = dato;
             this.billettID = billettID;
+        }
+
+        // Uten billettID
+        public Billett(String tittel, String kinonavn, int salnr, int radnr, int setenr, int billettpris, String klokkeslett, LocalDate dato) {
+            this.tittel = tittel;
+            this.kinonavn = kinonavn;
+            this.salnr = salnr;
+            this.radnr = radnr;
+            this.setenr = setenr;
+            this.billettpris = billettpris;
+            this.klokkeslett = klokkeslett;
+            this.dato = dato;
         }
 
         public String getTittel() {
@@ -85,19 +101,29 @@ public class Film {
             this.kinonavn = kinonavn;
         }
 
-        public String getRadnr() {
+        public int getSalnr() {
+            return salnr;
+        }
+
+        public void setSalnr(int salnr) {
+            this.salnr = salnr;
+        }
+
+        public int getRadnr() {
             return radnr;
         }
 
-        public void setRadnr(String radnr) {
+        public void setRadnr(int radnr) {
             this.radnr = radnr;
         }
 
-        public String getSetenr() {
+        public int getSetenr() {
             return setenr;
         }
 
-        public void setSetenr(String setenr) { this.setenr = setenr; }
+        public void setSetenr(int setenr) {
+            this.setenr = setenr;
+        }
 
         public int getBillettpris() {
             return billettpris;
