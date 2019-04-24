@@ -6,81 +6,118 @@ import java.util.Scanner;
 
 public class Main {
 
+    static List<Film.Billett> billettListe = new ArrayList<Film.Billett>();
+    static List<Film> filmListeSelger = new ArrayList<Film>();
+    static Scanner scanner;
+
     public static void main(String[] args) {
+        int check = 1;
 
 
-        List<Film.Billett> billettListe = new ArrayList<Film.Billett>();
+            //Film bergen = new Film("LegoFilm", "Bergen Kino",  LocalDate.of(2014,3,3));
+            Film bergen = new Film("LegoFilm", "Bergen Kino", 1, LocalDate.of(2014, 3, 3));
+            filmListeSelger.add(bergen);
 
-        /*
-        System.out.println("Skriv inn et brukernavn");
+            System.out.println("Skriv inn et brukernavn");
 
-        Scanner scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
 
-        String userName = scanner.next();
-        Kunde a = new Kunde(scanner.nextLine(), "", 0,200);
+            String userName = scanner.next();
+            Kunde a = new Kunde(scanner.nextLine(), "", 0, 200);
 
-        System.out.println("Hva er din alder?");
+            System.out.println("Hva er din alder?");
 
-        int userAlder = scanner.nextInt();
+            int userAlder = scanner.nextInt();
 
-        Person user = new Person(userName ,"", userAlder );
-        System.out.println(user);
-        Person Selger = new Person("Ola", "Normann", 20);
-        Selger KinoEier = new Selger(Selger, 0);
-
-
-
-
-        Film.Billett billett1 = new Film("legofilmen", "Ålesund kino", 2,  LocalDate.of(2014,3,3)).new Billett("emojifilmen", "Ålesund kino", 1, 3,2, 150, "14:30", LocalDate.of(2015,3,3), 2);
-        Film.Billett billett2 = new Film("emojifilmen", "Ålesund kino", 3,  LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", 1, 3,2, 150, "14:30", LocalDate.of(2015,3,3), 1);
-        billettListe.add(billett1);
-        billettListe.add(billett2);
+            Person user = new Person(userName, "", userAlder);
+            System.out.println(user);
+            Person Selger = new Person("Ola", "Normann", 20);
+            Selger KinoEier = new Selger(Selger, 0);
 
 
+            Film.Billett billett1 = new Film("LegoFilm", "Bergen Kino", 1, LocalDate.of(2014, 3, 3)).new Billett();
+            //Film.Billett billett2 = new Film("Batman", "Ålesund kino",  1, LocalDate.of(2015,3,3)).new Billett("emojifilmen", "Ålesund kino", "","", 175, "14:30", LocalDate.of(2015,3,3), 1);
+            billettListe.add(billett1);
 
-        System.out.println("1) Kjøp billett" + "\n" + "2) Selger"
-        );
+            while (check == 1) {
 
-        int userChoice = scanner.nextInt();
+            System.out.println("1) Kjøp billett" + "\n" + "2) Selger "
+            );
 
-        if (userChoice == 1) {
-            for (int i = 0; i < billettListe.size(); i++) {
-                System.out.println(i + ") " + billettListe.get(i).getTittel() + " - " + billettListe.get(i).getBillettpris());
+            int userChoice = scanner.nextInt();
 
-            }
-            int menuChoice = scanner.nextInt();
-            a.kjopBilett(billettListe.get(menuChoice), KinoEier);
+            if (userChoice == 1) {
+                System.out.println("    ---|| Velg film || ---");
+                for (int i = 0; i < billettListe.size(); i++) {
+                    System.out.println(i + ") " + billettListe.get(i).getTittel() + " - " + billettListe.get(i).getBillettpris());
+
+                }
+                int menuChoice = scanner.nextInt();
+                a.kjopBilett(billettListe.get(menuChoice), KinoEier);
+            } else if (userChoice == 2) {
+
+                System.out.println("1) Legg ny Film" + "\n" + "2) Slett eksisterende filmer"
+                );
+
+                int selgerChoice = scanner.nextInt();
+
+                if (selgerChoice == 1) {
+
+                    lagFilm();
+
+
+                } else if (selgerChoice == 2) {
+                    System.out.println("    ---|| Hvilken film vil du slette? || ---");
+                    for (int i = 0; i < filmListeSelger.size(); i++) {
+                        System.out.println(i + ") " + filmListeSelger.get(i).getTittel());
+                    }
+
+                    int slettFilmScan = scanner.nextInt();
+
+                    if (filmListeSelger.isEmpty()) {
+                        System.out.println("Det finnes ingen filmer");
+                        System.out.println("------------------------");
+                        System.out.println("Lag en film først!");
+
+                    } else {
+                        if (!filmListeSelger.isEmpty()) {
+                            filmListeSelger.remove(slettFilmScan);
+                        }
+                    }
+
+                    System.out.println(filmListeSelger);
+                    System.out.println("Ingen flere filmer å slette" + "\n");
+                    System.out.println("1) Legg til ny Film" + "\n" + "2) Slett eksisterende filmer");
+
+                    selgerChoice = scanner.nextInt();
+                    if (selgerChoice == 1) {
+                        lagFilm();
+                    } else {
+                        System.out.println("err");
+                    }
+
+                }
+
+
+            } //her på vi loope til start. {
+
         }
-        else if (userChoice == 2) {
-            System.out.println(".");
-        }
+    }
 
-        */
+    private static void lagFilm() {
+        scanner = new Scanner(System.in);
 
-        ArrayList<Film> filmListe = new ArrayList<Film>();
-
-        Kino AalesundVikKino = new Kino(3);
-        Kunde kunde1 = new Kunde("ola", "normann",20, 1000);
-        Selger selger = new Selger(new Person("Asd", "das", 29), 300);
-        //String tittel, String kinonavn, Kino kino, int billettpris, String klokkeslett, LocalDate dato)
-        Film.Billett actionJackson = new Film("Action Jackson slår til igjen","Heftig action",93, LocalDate.of(1988,7,7)).new Billett("legofilmen", "Ålesund kino", 2, 3, 12, 150, "15:30", LocalDate.of(2014,3,3), 1);
-        //Film deltaForce = new Film("The Delta Force"," Mega heftig action",125, LocalDate.of(1986,10,2));
-        //Film escapeFromNewYork = new Film("Escape from New York"," Ultra heftig action",99, LocalDate.of(1981,12,26));
-
-        kunde1.kjopBilett(actionJackson, selger);
-        kunde1.KjopFlereBiletter(actionJackson, 3, selger);
+        Film selgerFilm = new Film();
+        System.out.println("Skriv inn navn på film: ");
+        String t = scanner.next();
+        selgerFilm.setTittel(t);
 
 
+        System.out.println("Skriv inn en beskrivelse på filmen: ");
+        String b = scanner.next();
+        selgerFilm.setBeskrivelse(b);
 
-        Kino.mainMethod(actionJackson, selger, kunde1);
-
-
-
-
-
-
-
-
+        filmListeSelger.add(selgerFilm);
     }
 
 }

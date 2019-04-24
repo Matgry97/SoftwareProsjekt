@@ -21,6 +21,10 @@ public class Film {
         this.utgivDato = utgivDato;
     }
 
+    public Film() {
+
+    }
+
     //Oppdater og endre film
 
 
@@ -107,6 +111,8 @@ public class Film {
             this.klokkeslett = klokkeslett;
             this.dato = dato;
         }
+
+        public Billett(){};
 
         public String getTittel() {
             return this.tittel;
