@@ -66,11 +66,8 @@ public class Testing {
     public void test_KanKjoopeBillett_kjopBilett() {
         Kunde1.setSaldo(150);
         int KundeSaldoBeforeBuy = Kunde1.getSaldo();
-
         Kunde1.kjopBilett(harryPotter, pål);
-
         int KundeSaldoAfterBuy = Kunde1.getSaldo();
-
         assertFalse(KundeSaldoBeforeBuy > KundeSaldoAfterBuy, "Ikke nokk Saldo");
     }
     
@@ -116,5 +113,11 @@ public class Testing {
     public void testOmKinoFinnes() {
         assertNotNull(ålesundKino, "kinoen finnes ikke");
     }
+
+    @Test
+    public void test_kunde_innholdeFlereBilletter() {
+
+    }
+
 
 }
