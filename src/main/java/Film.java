@@ -8,8 +8,6 @@ public class Film {
     private LocalDate utgivDato;
     ArrayList<Film> filmListe = new ArrayList<Film>();
 
-    //EEE
-
 
     public Film(String tittel, String beskrivelse, LocalDate utgivDato) {
         this.tittel = tittel;
